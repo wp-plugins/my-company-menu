@@ -1,0 +1,20 @@
+ /**
+ * @plugin My Company Menu Plugin
+ * @title  Admin CSS
+ * @author Jason Michael Cross - www.jasonmichaelcross.com
+ * @author Immense Networks - www.immense.net
+ */
+
+.mcm_box {max-width: 980px; padding-right: 1%;}
+.postbox {margin-bottom: 15px; }
+.postbox .section {padding: 10px; margin-bottom: 15px; }
+.mcm_box .postbox .section h4 {border-bottom: 1px solid #dfdfdf; margin: 0 0 15px; padding: 10px 0;}
+.mcm_box .postbox div.submit-box {background: #f1f1f1; padding: 7px 10px; border-top: 1px solid #dfdfdf; overflow: hidden;}
+.mcm_box .postbox div.submit-box .submit {float: right; padding: 0; margin: 0;}
+.mcm_box .postbox div.submit-box #submit {float: left;}
+/*.mcm_box .postbox table.form-table input {width: 534px;}*/
+.mcm_social {overflow: hidden;}
+.mcm_social li {float: left; margin-right: 5px;}
+.mcm_box span.description {font-style: normal; font-size: 10px; color: #7A7A7A;}
+.mcm_box code {font-style: normal;}
+.mcm_box textarea {resize: vertical;}
