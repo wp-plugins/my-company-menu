@@ -18,7 +18,7 @@ function pods_ui_mycomp_menu()
   if($hoptions['icon']) {
     $icon = $hoptions['icon'];
   } else {
-    $icon = WP_CONTENT_URL.'/plugins/mycomp-menu/images/mycomp_icon.png';
+    $icon = WP_CONTENT_URL.'/plugins/my-company-menu/images/mycomp_icon.png';
   }
   //Company name field
   if($hoptions['compname']) {

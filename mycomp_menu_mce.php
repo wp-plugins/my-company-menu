@@ -22,7 +22,7 @@ class mycomp_mce_buttons {
     return $buttons;
   }
   function mce_external_plugins($plugin_array) {
-    $plugin_array['mycompset']  =  plugins_url('/mycomp-menu/mycomp_button.js');
+    $plugin_array['mycompset']  =  plugins_url('/my-company-menu/mycomp_button.js');
     return $plugin_array;
   }
   function tiny_mce_version($version) {
