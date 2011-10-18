@@ -27,15 +27,22 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 
 == Installation ==
 
-1. Upload the `mycomp-menu` folder to the `/wp-content/plugins/` directory
+1. Upload the `my-company-menu` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Select 'Company' from the admin sidebar and fill in necessary fields.
 4. Use shortcodes on pages and functions in template files to display information.
+5. For custom subpages, move mcm_menu.php from Plugins to Uploads directory.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial release.
+
+= 1.0.1 =
+* Updated readme.txt, better explaining the plugin.
+
+=1.0.2 =
+* Fixed filepath issue for customizable mcm_menu.php file
 
 == Frequently Asked Questions ==
 
