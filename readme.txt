@@ -69,6 +69,9 @@ Initial release.
 = 1.0.2 =
 Fixed filepath issue for customizable mcm_menu.php file.
 
+= 1.0.3 =
+Company phone function now returns value instead of echo
+
 == Upcoming Features ==
 
 1. Custom, update-proof social media images
