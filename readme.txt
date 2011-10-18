@@ -1,7 +1,7 @@
 ﻿=== My Company Menu ===
 Contributors:  jcross
-Donate link: http://www.immense.net/
-Tags: company admin menu, contact information
+Donate link: http://www.immense.net/company-menu-plugin-wordpress/
+Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.2.1
 Stable tag: 1.0.1
