@@ -10,16 +10,16 @@ Give your clients a company-specific admin menu to manage contact information an
 
 == Description ==
 
-Give your clients a Company Menu to manage contact information and custom subpages (like PODS managers).
+This plugin is intended for theme developers who build WordPress websites for other businesses. Give your clients a Company Menu to manage contact information and custom subpages (like PODS managers).
 
-This plugin is intended for theme developers who build WordPress websites for other businesses. For starters, MCM adds a new tab in the Admin’s Sidebar, which links to a page to manage standard business contact information and social networking links.
+1. Adds a new tab in the Admin’s Sidebar
+2. Main page in this new tab used to manage standard business contact information and social networking links.
+3. Add custom subpages under this tab
+4. Change the menu title and icon to match your client's branding.
 
-I also use this new menu to organize PODS, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
+I use this new menu to organize PODS, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
 
 I include a Demo Page (mcm_menu.php located in the plugin directory). If you have no need for additional subpages, just check the Hide Demo Page box on the Help/Settings page to remove it. Otherwise, move mcm_menu.php from Plugins to your Uploads directory to customize it as needed (this will ensure your tweaks remain after an update). The file mcm_menu.php has ample template functions and recommendations for creating your own custom pages.
-
-
-Change the menu title and icon to match your client's branding.
 
 Each field has a shortcode beneath it that can be used on posts and pages to show the contents of the related input box. Theme developers can use the same shortcode as PHP functions in templates to display the data.
 
