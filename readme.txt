@@ -4,20 +4,26 @@ Donate link: http://www.immense.net/
 Tags: company admin menu, contact information
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Give your clients a company-specific admin menu to manage contact information and any custom plugins/PODS/etc developed for that client.
 
 == Description ==
 
-This plugin was developedto give my clients a nice interface for managing their contact information (phone number, address, social media links, etc.). It provides simple shortcodes and php functions to be included in posts/pages and template files to show that information.
+Give your clients a Company Menu to manage contact information and custom subpages (like PODS managers).
 
-My Company Menu
+This plugin is intended for theme developers who build WordPress websites for other businesses. For starters, MCM adds a new tab in the Admin’s Sidebar, which links to a page to manage standard business contact information and social networking links.
 
-Developers can easily edit the plugin to custom-tailor it for your client.
-	- Add sub-pages under the company's menu by editing [mycomp_settings_admin_menus.php]
-	- Add your own unique shortcodes/functions by editing [mycomp_settings_shortcodes.php]
-	- Add additional buttons to the TinyMCE WYSIWYG editor by editing [mycomp_settings_mce.php]
+I also use this new menu to organize PODS, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
+
+I include a Demo Page (mcm_menu.php located in the plugin directory). If you have no need for additional subpages, just check the Hide Demo Page box on the Help/Settings page to remove it. Otherwise, move mcm_menu.php from Plugins to your Uploads directory to customize it as needed (this will ensure your tweaks remain after an update). The file mcm_menu.php has ample template functions and recommendations for creating your own custom pages.
+
+
+Change the menu title and icon to match your client's branding.
+
+Each field has a shortcode beneath it that can be used on posts and pages to show the contents of the related input box. Theme developers can use the same shortcode as PHP functions in templates to display the data.
+
+Complete breakdown of features can be found here: http://www.immense.net/company-menu-plugin-wordpress/
 
 == Installation ==
 
