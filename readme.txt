@@ -35,17 +35,17 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release.
-
-= 1.0.1 =
-* Updated readme.txt, better explaining the plugin.
+= 1.0.3 =
+* Company phone function returns value instead of echo
 
 = 1.0.2 =
 * Fixed filepath issue for customizable mcm_menu.php file
 
-= 1.0.3 =
-* Company phone function returns value instead of echo
+= 1.0.1 =
+* Updated readme.txt, better explaining the plugin.
+
+= 1.0.0 =
+* Initial release.
 
 == Frequently Asked Questions ==
 
