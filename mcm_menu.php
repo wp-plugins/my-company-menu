@@ -13,8 +13,10 @@ function pods_ui_mycomp_submenu()
     // Add submenu pages here
     /************************/
 
+    /**** Move this file to your Uploads directory before customizing. Otherwise, your changes will be overwritten when you update this plugin. ****/
+
     // 1. Uncomment the add_submenu_page function below and replace arguments to customize. Keep this function inside the pods_ui_mycomp_submenu() function that this text is currently in.
-    // 2. The last option calls another function to build a page, which you must write on this page. Use the mcm_your_function below as a template for creating basic markup on a new page using default WordPress classes. Use the PODS function at the bottom of thie page as a template for adding PODS as submenu items.
+    // 2. The last option calls another function to build a page, which you must write on this page. Use the mcm_your_function below as a template for creating basic markup on a new page using default WordPress classes. Use the PODS function at the bottom of this page as a template for adding PODS as submenu items.
     // 3. For more information, check the WP codex for this: http://codex.wordpress.org/Function_Reference/add_submenu_page
     
   /**********************/
