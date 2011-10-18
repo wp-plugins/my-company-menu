@@ -43,7 +43,7 @@ function mcm_your_function() { ?>
                    <h3>Customize this page and add your own custom pages</h3>
                    <div class="section">
                         <ol>
-                          <li>Go into <strong>/wp-content/plugins/mycomp-menu</strong> and copy the file mcm_menu.php</li>
+                          <li>Go into <strong>/wp-content/plugins/my-company-menu</strong> and copy the file mcm_menu.php</li>
                           <li>Paste mcm_menu.php into your <strong>/wp-content/uploads</strong> directory</li>
                           <li>Make all your custom changes to the file in the uploads directory so nothing gets overwritten during a plugin update.</li>
                         </ol>
