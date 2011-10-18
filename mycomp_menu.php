@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: My Company Menu
-Version: 1.0.2
+Version: 1.0.3
 Plugin URI: http://www.jasonmichaelcross.com/
 Description: Manage common company information (phone number, email, physical address, etc.) within WordPress. 
 Author: Immense Networks | Jason Michael Cross
@@ -9,7 +9,7 @@ Author URI: http://www.immense.net/
 */
 
 /* Definitions */
-define('MYCOMP_MENU_VERSION', '1.0.2');
+define('MYCOMP_MENU_VERSION', '1.0.3');
 define('MYCOMP_MENU_URL', plugin_dir_url( __FILE__ ));
 
 register_activation_hook( __FILE__, 'set_mycomp_menu_activate' );

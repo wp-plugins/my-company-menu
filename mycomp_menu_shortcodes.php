@@ -30,7 +30,7 @@ $myComp_hasSocial = 0;
 // Contact information
 function company_phone() {
 	$options = get_mycomp_menu_contact();
-	echo $options['phone'];
+	return $options['phone'];
 }
 
 function company_tollfree() {

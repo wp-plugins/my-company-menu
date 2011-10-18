@@ -4,7 +4,7 @@ Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 
 Give your clients a company-specific admin menu to manage contact information and any custom plugins/PODS/etc developed for that client.
 
@@ -41,8 +41,11 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 = 1.0.1 =
 * Updated readme.txt, better explaining the plugin.
 
-=1.0.2 =
+= 1.0.2 =
 * Fixed filepath issue for customizable mcm_menu.php file
+
+= 1.0.3 =
+* Company phone function returns value instead of echo
 
 == Frequently Asked Questions ==
 
