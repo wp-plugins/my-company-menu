@@ -60,8 +60,11 @@ Edit these fields from the Help/Settings page.
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.0 =
 Initial release.
+
+= 1.0.2 =
+Fixed filepath issue for customizable mcm_menu.php file.
 
 == Upcoming Features ==
 
