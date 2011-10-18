@@ -63,6 +63,6 @@
 					</form>
 				</div> <!-- /section -->
 			</div> <!-- /postbox -->
-		<p>For assitance, please visit <a href="http://www.immense.net/" title="Visit our website">www.immense.net</a>.</p>
+		<p>For assitance, please visit <a href="http://www.immense.net/company-menu-plugin-wordpress/" title="Visit our website">http://www.immense.net/company-menu-plugin-wordpress/</a>.</p>
 	</div> <!-- /metabox-holder -->
 </div> <!-- /wrap -->
