@@ -4,7 +4,7 @@ Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 
@@ -35,6 +35,9 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory.
 
 == Changelog ==
+
+= 1.0.5 =
+* Bug fix: RSS feed coordinates not updating
 
 = 1.0.4 =
 * Customize social media icons with your own image sprite
@@ -82,6 +85,9 @@ Company phone function now returns boolean value instead of echo
 
 = 1.0.4 =
 Customize social media icons with your own image sprite, including separate upstate and hover states
+
+= 1.0.5 =
+Bug fix: RSS feed coordinates not updating
 
 == Upcoming Features ==
 

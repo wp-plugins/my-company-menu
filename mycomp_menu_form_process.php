@@ -117,6 +117,8 @@ function update_mycomp_menu_help() {
 	update_option('mycomp_menu_vimeo_y', $_POST['mycomp_menu_vimeo_y']);
 	update_option('mycomp_menu_gplus_x', $_POST['mycomp_menu_gplus_x']);
 	update_option('mycomp_menu_gplus_y', $_POST['mycomp_menu_gplus_y']);
+	update_option('mycomp_menu_rss_x', $_POST['mycomp_menu_rss_x']);
+	update_option('mycomp_menu_rss_y', $_POST['mycomp_menu_rss_y']);
 	update_option('mycomp_menu_facebook_x_hover', $_POST['mycomp_menu_facebook_x_hover']);
 	update_option('mycomp_menu_facebook_y_hover', $_POST['mycomp_menu_facebook_y_hover']);
 	update_option('mycomp_menu_linkedin_x_hover', $_POST['mycomp_menu_linkedin_x_hover']);
