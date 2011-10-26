@@ -19,4 +19,16 @@ jQuery(document).ready(function ($) {
 		 tb_remove();
 	}
 
+	$('#mycomp_menu_socialsprite_button').click(function() {
+		 formfield = $('#mycomp_menu_socialsprite').attr('name');
+		 tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
+		 return false;
+	});
+
+	window.send_to_editor = function(html) {
+		 imgurl = $('img',html).attr('src');
+		 $('#mycomp_menu_socialsprite').val(imgurl);
+		 tb_remove();
+	}
+
 });

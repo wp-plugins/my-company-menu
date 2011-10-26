@@ -1,18 +1,32 @@
 <?php
 /*
 Plugin Name: My Company Menu
-Version: 1.0.3
+Version: 1.0.4
 Plugin URI: http://www.jasonmichaelcross.com/
-Description: Manage common company information (phone number, email, physical address, etc.) within WordPress. 
+Description: Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 Author: Immense Networks | Jason Michael Cross
 Author URI: http://www.immense.net/
 */
 
 /* Definitions */
-define('MYCOMP_MENU_VERSION', '1.0.3');
+define('MYCOMP_MENU_VERSION', '1.0.4');
 define('MYCOMP_MENU_URL', plugin_dir_url( __FILE__ ));
 
 register_activation_hook( __FILE__, 'set_mycomp_menu_activate' );
+
+if(mcm_dbversion()) {
+	set_mycomp_menu_activate();
+	update_option('mycomp_menu_dbversion', MYCOMP_MENU_VERSION);
+}
+
+// Determine database version number of MCM
+function mcm_dbversion() {
+	if(get_option('mycomp_menu_dbversion') < MYCOMP_MENU_VERSION) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 /* Create Admin menus */
 include ('mycomp_menu_admin_menus.php');
@@ -25,6 +39,7 @@ function reset_mycomp_menu() {
 }
 /* Create default values in wp_options table when plugin is activated */
 function set_mycomp_menu_activate() {
+	add_option('mycomp_menu_dbversion', MYCOMP_MENU_VERSION);
 	add_option('mycomp_menu_phone', '');
 	add_option('mycomp_menu_tollfree', '');
 	add_option('mycomp_menu_fax', '');
@@ -34,12 +49,44 @@ function set_mycomp_menu_activate() {
 	add_option('mycomp_menu_city', '');
 	add_option('mycomp_menu_state', '');
 	add_option('mycomp_menu_zip', '');
+	add_option('mycomp_menu_socialsprite', MYCOMP_MENU_URL.'images/socialsprite.png');
+	add_option('mycomp_menu_socialsprite_icon_width', '16');
+	add_option('mycomp_menu_socialsprite_icon_height', '16');
 	add_option('mycomp_menu_facebook', '');
+	add_option('mycomp_menu_facebook_x', '-16');
+	add_option('mycomp_menu_facebook_y', '0');
+	add_option('mycomp_menu_facebook_x_hover', '-16');
+	add_option('mycomp_menu_facebook_y_hover', '-16');
 	add_option('mycomp_menu_linkedin', '');
+	add_option('mycomp_menu_linkedin_x', '-32');
+	add_option('mycomp_menu_linkedin_y', '0');
+	add_option('mycomp_menu_linkedin_x_hover', '-32');
+	add_option('mycomp_menu_linkedin_y_hover', '-16');
 	add_option('mycomp_menu_twitter', '');
-	add_option('mycomp_menu_youtube', '');
+	add_option('mycomp_menu_twitter_x', '-48');
+	add_option('mycomp_menu_twitter_y', '0');
+	add_option('mycomp_menu_twitter_x_hover', '-48');
+	add_option('mycomp_menu_twitter_y_hover', '-16');
 	add_option('mycomp_menu_vimeo', '');
+	add_option('mycomp_menu_vimeo_x', '-64');
+	add_option('mycomp_menu_vimeo_y', '0');
+	add_option('mycomp_menu_vimeo_x_hover', '-64');
+	add_option('mycomp_menu_vimeo_y_hover', '-16');
+	add_option('mycomp_menu_youtube', '');
+	add_option('mycomp_menu_youtube_x', '-80');
+	add_option('mycomp_menu_youtube_y', '0');
+	add_option('mycomp_menu_youtube_x_hover', '-80');
+	add_option('mycomp_menu_youtube_y_hover', '-16');
 	add_option('mycomp_menu_gplus', '');
+	add_option('mycomp_menu_gplus_x', '0');
+	add_option('mycomp_menu_gplus_y', '0');
+	add_option('mycomp_menu_gplus_x_hover', '0');
+	add_option('mycomp_menu_gplus_y_hover', '-16');
+	add_option('mycomp_menu_rss', '');
+	add_option('mycomp_menu_rss_x', '-96');
+	add_option('mycomp_menu_rss_y', '0');
+	add_option('mycomp_menu_rss_x_hover', '-96');
+	add_option('mycomp_menu_rss_y_hover', '-16');
 	add_option('mycomp_menu_disclaimer', '');
 	//help page
 	add_option('mycomp_menu_icon', MYCOMP_MENU_URL.'images/mycomp_icon.png');
@@ -57,6 +104,7 @@ add_action("admin_print_styles",'mycomp_menu_load_styles');
 /* Returns array of values for admin options page */
 function get_mycomp_menu_contact() {
 	return array(
+		'dbversion' => get_option('mycomp_menu_dbversion'),
 		'phone' => get_option('mycomp_menu_phone'),
 		'tollfree' => get_option('mycomp_menu_tollfree'),
 		'fax' => get_option('mycomp_menu_fax'),
@@ -72,7 +120,8 @@ function get_mycomp_menu_contact() {
 		'youtube' => get_option('mycomp_menu_youtube'),
 		'vimeo' => get_option('mycomp_menu_vimeo'),
 		'gplus' => get_option('mycomp_menu_gplus'),
-		'disclaimer' => get_option('mycomp_menu_disclaimer')
+		'rss' => get_option('mycomp_menu_rss'),
+		'disclaimer' => get_option('mycomp_menu_disclaimer'),
 		//'gmapcode' => get_option('mycomp_menu_gmapcode'),
 	);
 }
@@ -81,7 +130,38 @@ function get_mycomp_menu_help() {
 	return array(
 	'icon' => get_option('mycomp_menu_icon'),
 	'compname' => get_option('mycomp_menu_compname'),
-	'showdemo' => get_option('mycomp_menu_showdemo')
+	'showdemo' => get_option('mycomp_menu_showdemo'),
+	'socialsprite' => get_option('mycomp_menu_socialsprite'),
+	'socialsprite_icon_width' => get_option('mycomp_menu_socialsprite_icon_width'),
+	'socialsprite_icon_height' => get_option('mycomp_menu_socialsprite_icon_height'),
+	'gplus_x' => get_option('mycomp_menu_gplus_x'),
+	'gplus_y' => get_option('mycomp_menu_gplus_y'),
+	'vimeo_x' => get_option('mycomp_menu_vimeo_x'),
+	'vimeo_y' => get_option('mycomp_menu_vimeo_y'),
+	'youtube_x' => get_option('mycomp_menu_youtube_x'),
+	'youtube_y' => get_option('mycomp_menu_youtube_y'),
+	'twitter_x' => get_option('mycomp_menu_twitter_x'),
+	'twitter_y' => get_option('mycomp_menu_twitter_y'),
+	'linkedin_x' => get_option('mycomp_menu_linkedin_x'),
+	'linkedin_y' => get_option('mycomp_menu_linkedin_y'),
+	'facebook_x' => get_option('mycomp_menu_facebook_x'),
+	'facebook_y' => get_option('mycomp_menu_facebook_y'),
+	'rss_x' => get_option('mycomp_menu_rss_x'),
+	'rss_y' => get_option('mycomp_menu_rss_y'),
+	'gplus_x_hover' => get_option('mycomp_menu_gplus_x_hover'),
+	'gplus_y_hover' => get_option('mycomp_menu_gplus_y_hover'),
+	'vimeo_x_hover' => get_option('mycomp_menu_vimeo_x_hover'),
+	'vimeo_y_hover' => get_option('mycomp_menu_vimeo_y_hover'),
+	'youtube_x_hover' => get_option('mycomp_menu_youtube_x_hover'),
+	'youtube_y_hover' => get_option('mycomp_menu_youtube_y_hover'),
+	'twitter_x_hover' => get_option('mycomp_menu_twitter_x_hover'),
+	'twitter_y_hover' => get_option('mycomp_menu_twitter_y_hover'),
+	'linkedin_x_hover' => get_option('mycomp_menu_linkedin_x_hover'),
+	'linkedin_y_hover' => get_option('mycomp_menu_linkedin_y_hover'),
+	'facebook_x_hover' => get_option('mycomp_menu_facebook_x_hover'),
+	'facebook_y_hover' => get_option('mycomp_menu_facebook_y_hover'),
+	'rss_x_hover' => get_option('mycomp_menu_rss_x_hover'),
+	'rss_y_hover' => get_option('mycomp_menu_rss_y_hover'),
 	);
 }
 
@@ -134,12 +214,14 @@ include('mycomp_menu_shortcodes.php');
 
 /* Frontend CSS (if applicable) */
 function mycomp_frontend_load_styles() {
-	//wp_register_style('mycomp_frontend_stylesheet', MYCOMP_MENU_URL.'css/mycomp_frontend_style.css');
+	wp_register_style('mycomp_frontend_stylesheet', MYCOMP_MENU_URL.'css/mycomp_frontend_style.css');
 	wp_enqueue_style('mycomp_frontend_stylesheet', MYCOMP_MENU_URL.'css/mycomp_frontend_style.css');
+	echo 'this works';
 }
-$hasSocial = company_social();
-if($hasSocial) {
-	add_action('wp_head','mycomp_frontend_load_styles');
+/*
+if(company_social()) {
+	add_action('wp_head','mycomp_frontend_load_styles', 1);
 }
+*/
 
 ?>

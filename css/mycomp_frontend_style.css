@@ -5,6 +5,5 @@
  * @author Immense Networks - www.immense.net
  */
 
- body {background: yellow !important; }
  .mcm_social {overflow: hidden;}
- .mcm_social li {float: left};
+ .mcm_social li {float: right; margin-right: 5px; }

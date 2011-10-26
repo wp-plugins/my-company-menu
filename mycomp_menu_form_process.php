@@ -24,6 +24,7 @@ function update_mycomp_menu() {
 	update_option('mycomp_menu_youtube', $_REQUEST['mycomp_menu_youtube']);
 	update_option('mycomp_menu_vimeo', $_REQUEST['mycomp_menu_vimeo']);
 	update_option('mycomp_menu_gplus', $_REQUEST['mycomp_menu_gplus']);
+	update_option('mycomp_menu_rss', $_REQUEST['mycomp_menu_rss']);
 	update_option('mycomp_menu_disclaimer', $_REQUEST['mycomp_menu_disclaimer']);
 	//update_option('mycomp_menu_gmapcode', $_REQUEST['mycomp_menu_gmapcode']);
 ?>
@@ -47,13 +48,48 @@ function unset_mycomp_menu_deactivate() {
 	delete_option('mycomp_menu_state');
 	delete_option('mycomp_menu_zip');
 	delete_option('mycomp_menu_email');
+	delete_option('mycomp_menu_socialsprite');
+	delete_option('mycomp_menu_socialsprite_icon_x');
+	delete_option('mycomp_menu_socialsprite_icon_y');
+	delete_option('mycomp_menu_socialsprite_icon_width');
+	delete_option('mycomp_menu_socialsprite_icon_height');
 	delete_option('mycomp_menu_facebook');
+	delete_option('mycomp_menu_facebook_x');
+	delete_option('mycomp_menu_facebook_y');
 	delete_option('mycomp_menu_linkedin');
+	delete_option('mycomp_menu_linkedin_x');
+	delete_option('mycomp_menu_linkedin_y');
 	delete_option('mycomp_menu_twitter');
+	delete_option('mycomp_menu_twitter_x');
+	delete_option('mycomp_menu_twitter_y');
 	delete_option('mycomp_menu_youtube');
+	delete_option('mycomp_menu_youtube_x');
+	delete_option('mycomp_menu_youtube_y');
 	delete_option('mycomp_menu_vimeo');
+	delete_option('mycomp_menu_vimeo_x');
+	delete_option('mycomp_menu_vimeo_y');
 	delete_option('mycomp_menu_gplus');
+	delete_option('mycomp_menu_gplus_x');
+	delete_option('mycomp_menu_gplus_y');
+	delete_option('mycomp_menu_rss');
+	delete_option('mycomp_menu_rss_x');
+	delete_option('mycomp_menu_rss_y');
+	delete_option('mycomp_menu_facebook_x_hover');
+	delete_option('mycomp_menu_facebook_y_hover');
+	delete_option('mycomp_menu_linkedin_x_hover');
+	delete_option('mycomp_menu_linkedin_y_hover');
+	delete_option('mycomp_menu_twitter_x_hover');
+	delete_option('mycomp_menu_twitter_y_hover');
+	delete_option('mycomp_menu_youtube_x_hover');
+	delete_option('mycomp_menu_youtube_y_hover');
+	delete_option('mycomp_menu_vimeo_x_hover');
+	delete_option('mycomp_menu_vimeo_y_hover');
+	delete_option('mycomp_menu_gplus_x_hover');
+	delete_option('mycomp_menu_gplus_y_hover');
+	delete_option('mycomp_menu_rss_x_hover');
+	delete_option('mycomp_menu_rss_y_hover');
 	delete_option('mycomp_menu_disclaimer');
+
 	//help page
 	delete_option('mycomp_menu_icon');
 	delete_option('mycomp_menu_compname');
@@ -66,6 +102,35 @@ function update_mycomp_menu_help() {
 	update_option('mycomp_menu_icon', $_POST['mycomp_menu_icon']);
 	update_option('mycomp_menu_compname', $_REQUEST['mycomp_menu_compname']);
 	update_option('mycomp_menu_showdemo', $_POST['mycomp_menu_showdemo']);
+	update_option('mycomp_menu_socialsprite', $_POST['mycomp_menu_socialsprite']);
+	update_option('mycomp_menu_socialsprite_icon_width', $_POST['mycomp_menu_socialsprite_icon_width']);
+	update_option('mycomp_menu_socialsprite_icon_height', $_POST['mycomp_menu_socialsprite_icon_height']);
+	update_option('mycomp_menu_facebook_x', $_POST['mycomp_menu_facebook_x']);
+	update_option('mycomp_menu_facebook_y', $_POST['mycomp_menu_facebook_y']);
+	update_option('mycomp_menu_linkedin_x', $_POST['mycomp_menu_linkedin_x']);
+	update_option('mycomp_menu_linkedin_y', $_POST['mycomp_menu_linkedin_y']);
+	update_option('mycomp_menu_twitter_x', $_POST['mycomp_menu_twitter_x']);
+	update_option('mycomp_menu_twitter_y', $_POST['mycomp_menu_twitter_y']);
+	update_option('mycomp_menu_youtube_x', $_POST['mycomp_menu_youtube_x']);
+	update_option('mycomp_menu_youtube_y', $_POST['mycomp_menu_youtube_y']);
+	update_option('mycomp_menu_vimeo_x', $_POST['mycomp_menu_vimeo_x']);
+	update_option('mycomp_menu_vimeo_y', $_POST['mycomp_menu_vimeo_y']);
+	update_option('mycomp_menu_gplus_x', $_POST['mycomp_menu_gplus_x']);
+	update_option('mycomp_menu_gplus_y', $_POST['mycomp_menu_gplus_y']);
+	update_option('mycomp_menu_facebook_x_hover', $_POST['mycomp_menu_facebook_x_hover']);
+	update_option('mycomp_menu_facebook_y_hover', $_POST['mycomp_menu_facebook_y_hover']);
+	update_option('mycomp_menu_linkedin_x_hover', $_POST['mycomp_menu_linkedin_x_hover']);
+	update_option('mycomp_menu_linkedin_y_hover', $_POST['mycomp_menu_linkedin_y_hover']);
+	update_option('mycomp_menu_twitter_x_hover', $_POST['mycomp_menu_twitter_x_hover']);
+	update_option('mycomp_menu_twitter_y_hover', $_POST['mycomp_menu_twitter_y_hover']);
+	update_option('mycomp_menu_youtube_x_hover', $_POST['mycomp_menu_youtube_x_hover']);
+	update_option('mycomp_menu_youtube_y_hover', $_POST['mycomp_menu_youtube_y_hover']);
+	update_option('mycomp_menu_vimeo_x_hover', $_POST['mycomp_menu_vimeo_x_hover']);
+	update_option('mycomp_menu_vimeo_y_hover', $_POST['mycomp_menu_vimeo_y_hover']);
+	update_option('mycomp_menu_gplus_x_hover', $_POST['mycomp_menu_gplus_x_hover']);
+	update_option('mycomp_menu_gplus_y_hover', $_POST['mycomp_menu_gplus_y_hover']);
+	update_option('mycomp_menu_rss_x_hover', $_POST['mycomp_menu_rss_x_hover']);
+	update_option('mycomp_menu_rss_y_hover', $_POST['mycomp_menu_rss_y_hover']);
 ?>
 <div id="message" class="updated fade">
 	<p>Options saved. You may need to refresh this page to see changes.</p>

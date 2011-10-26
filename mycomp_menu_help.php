@@ -11,11 +11,11 @@
 
 <div class="wrap">
 	<div class="icon32" id="icon-options-general"><br></div>
-	<h2>My Company Menu Help</h2>
+	<h2>My Company Menu Help/Settings</h2>
 	<div class="metabox-holder mcm_box">
 		<form name="mycomp_menu_help_form" method="post">
 			<div class="postbox">
-			   	<h3>Company Menu Settings</h3>
+			   	<h3>Company menu settings</h3>
 			   	<div class="section">
 				   	<table class="form-table">
 				   	<tbody>
@@ -43,10 +43,91 @@
 			</div> <!-- /postbox -->
 
 			<div class="postbox">
-				<h3>For Theme Developers</h3>
+			   	<h3>Social media icons sprite</h3>
+			   	<div class="section">
+			   		<p>Setup your social networking icons as an <a target="_blank" href="http://www.w3schools.com/css/css_image_sprites.asp" title="Learn how to use image sprites">image sprite</a> here.</p>
+				   	<table class="form-table">
+					   	<tbody>
+						   	<tr>
+						   		<th scope="row"><label for="mycomp_menu_socialsprite">Image sprite</label></th>
+								<td><input class="regular-text" id="mycomp_menu_socialsprite" type="text" name="mycomp_menu_socialsprite" value="<?php
+									if($hoptions['socialsprite']) {
+										echo $hoptions['socialsprite'];
+									} else {
+										echo MYCOMP_MENU_URL.'/images/socialsprite.png';
+									}
+								?>" /><input id="mycomp_menu_socialsprite_button" type="button" value="Upload Image" /><br /><span class="description">Png-24 with alpha transparency recommended</span></td>
+							</tr>
+							<tr>
+								<th scope="row"><label>Dimensions of each icon (in pixels)</label></th>
+								<td><input class="regular-text" type="text" name="mycomp_menu_socialsprite_icon_width" value="<?php echo $hoptions['socialsprite_icon_width']; ?>" id="mycomp_menu_socialsprite_icon_width" /><br /><span class="description">Individual icon width (in pixels)</span></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_socialsprite_icon_height" value="<?php echo $hoptions['socialsprite_icon_height']; ?>" id="mycomp_menu_socialsprite_icon_height" /><br /><span class="description">Individual icon height (in pixels)</span></td>
+							</tr>
+						</tbody>
+					</table>
+					<h4>Icon coordinates</h4>
+					<p>Put your X and Y coordinates for each icon's upstate and hover state (may need negative values for proper positioning).</p>
+					<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><label>Google Plus</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_gplus_x" value="<?php echo $hoptions['gplus_x']; ?>" id="mycomp_menu_gplus_x" /><br /><span class="description">X-coordinate</span><input class="regular-text" type="text" name="mycomp_menu_gplus_x_hover" value="<?php echo $hoptions['gplus_x_hover']; ?>" id="mycomp_menu_gplus_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_gplus_y" value="<?php echo $hoptions['gplus_y']; ?>" id="mycomp_menu_gplus_y" /><br /><span class="description">Y-coordinate</span><input class="regular-text" type="text" name="mycomp_menu_gplus_y_hover" value="<?php echo $hoptions['gplus_y_hover']; ?>" id="mycomp_menu_gplus_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><label>Facebook</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_facebook_x" value="<?php echo $hoptions['facebook_x']; ?>" id="mycomp_menu_facebook_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_facebook_x_hover" value="<?php echo $hoptions['facebook_x_hover']; ?>" id="mycomp_menu_facebook_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_facebook_y" value="<?php echo $hoptions['facebook_y']; ?>" id="mycomp_menu_facebook_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_facebook_y_hover" value="<?php echo $hoptions['facebook_y_hover']; ?>" id="mycomp_menu_facebook_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><label>LinkedIn</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_linkedin_x" value="<?php echo $hoptions['linkedin_x']; ?>" id="mycomp_menu_linkedin_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_linkedin_x_hover" value="<?php echo $hoptions['linkedin_x_hover']; ?>" id="mycomp_menu_linkedin_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_linkedin_y" value="<?php echo $hoptions['linkedin_y']; ?>" id="mycomp_menu_linkedin_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_linkedin_y_hover" value="<?php echo $hoptions['linkedin_y_hover']; ?>" id="mycomp_menu_linkedin_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><label>Twitter</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_twitter_x" value="<?php echo $hoptions['twitter_x']; ?>" id="mycomp_menu_twitter_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_twitter_x_hover" value="<?php echo $hoptions['twitter_x_hover']; ?>" id="mycomp_menu_twitter_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_twitter_y" value="<?php echo $hoptions['twitter_y']; ?>" id="mycomp_menu_twitter_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_twitter_y_hover" value="<?php echo $hoptions['twitter_y_hover']; ?>" id="mycomp_menu_twitter_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><label>YouTube</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_youtube_x" value="<?php echo $hoptions['youtube_x']; ?>" id="mycomp_menu_youtube_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_youtube_x_hover" value="<?php echo $hoptions['youtube_x_hover']; ?>" id="mycomp_menu_youtube_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_youtube_y" value="<?php echo $hoptions['youtube_y']; ?>" id="mycomp_menu_youtube_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_youtube_y_hover" value="<?php echo $hoptions['youtube_y_hover']; ?>" id="mycomp_menu_youtube_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><label>Vimeo</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_vimeo_x" value="<?php echo $hoptions['vimeo_x']; ?>" id="mycomp_menu_vimeo_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_vimeo_x_hover" value="<?php echo $hoptions['vimeo_x_hover']; ?>" id="mycomp_menu_vimeo_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_vimeo_y" value="<?php echo $hoptions['vimeo_y']; ?>" id="mycomp_menu_vimeo_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_vimeo_y_hover" value="<?php echo $hoptions['vimeo_y_hover']; ?>" id="mycomp_menu_vimeo_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<th scope="row"><label>RSS Feed</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_rss_x" value="<?php echo $hoptions['rss_x']; ?>" id="mycomp_menu_rss_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_rss_x_hover" value="<?php echo $hoptions['rss_x_hover']; ?>" id="mycomp_menu_rss_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_rss_y" value="<?php echo $hoptions['rss_y']; ?>" id="mycomp_menu_rss_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_rss_y_hover" value="<?php echo $hoptions['rss_y_hover']; ?>" id="mycomp_menu_rss_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
+							<td><p>Display available social media icons: [company_social]</p></td>
+							<td><?php
+								if(company_social()) {
+									echo company_social('ul', 'li');
+								} else {
+									echo '<span class="description">Insert URLs on Company Page to show how icons will look on frontend.</span>';
+								}
+							?></td>
+						</tr>
+					</tbody>
+					</table>
+				</div> <!-- /section -->
+				<div class="submit-box">
+					<input type="submit" value="<?php _e('Save All Changes') ?>" class="button-primary" id="submit" name="submit">
+					<p class="submit"><input type="button" value="Reset values" onClick="this.form.reset()" /></p>
+				</div> <!-- submit-box -->
+			</div> <!-- /postbox -->
+
+			<div class="postbox">
+				<h3>For theme developers</h3>
 				<div class="section">
-					<p>All shortcodes will return values, not echo them. You should verify if each field has a value, then echo something based on success/failure. Each shortcode shares the name of the function for your template pages.</p>
-					<p>For example, the shortcode for the Company Phone Number is <strong>[company_phone]</strong>. So, incorporate this into your template with:</p>
+					<p>All shortcodes will return boolean values. You should verify if each field has a value, then echo something based on success/failure. Each shortcode shares the name of the function for your template pages.</p>
+					<p>For example, the shortcode for the Company Phone Number is [company_phone]. So, incorporate this into your template with:</p>
 					<pre>
 	&lt;?php
 	  if(company_phone()) {

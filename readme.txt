@@ -1,23 +1,23 @@
-﻿=== My Company Menu ===
+=== My Company Menu ===
 Contributors:  jcross
 Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
-Give your clients a company-specific admin menu to manage contact information and any custom plugins/PODS/etc developed for that client.
+Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 
 == Description ==
 
-This plugin is intended for theme developers who build WordPress websites for other businesses. Give your clients a Company Menu to manage contact information and custom subpages (like PODS managers).
+This plugin is intended for theme developers who build WordPress websites for other businesses. Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 
 1. Adds a new tab in the Admin’s Sidebar
 2. Main page in this new tab used to manage standard business contact information and social networking links.
 3. Add custom subpages under this tab
 4. Change the menu title and icon to match your client's branding.
 
-I use this new menu to organize PODS, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
+I use this new menu to organize Pods, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
 
 I include a Demo Page (mcm_menu.php located in the plugin directory). If you have no need for additional subpages, just check the Hide Demo Page box on the Help/Settings page to remove it. Otherwise, move mcm_menu.php from Plugins to your Uploads directory to customize it as needed (this will ensure your tweaks remain after an update). The file mcm_menu.php has ample template functions and recommendations for creating your own custom pages.
 
@@ -31,9 +31,13 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Select 'Company' from the admin sidebar and fill in necessary fields.
 4. Use shortcodes on pages and functions in template files to display information.
-5. For custom subpages, move mcm_menu.php from Plugins to Uploads directory.
+5. Edit menu settings and social media icons on Help/Settings page.
+6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory.
 
 == Changelog ==
+
+= 1.0.4 =
+* Customize social media icons with your own image sprite
 
 = 1.0.3 =
 * Company phone function returns value instead of echo
@@ -53,6 +57,10 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 
 Edit these fields from the Help/Settings page.
 
+= How do I setup and use image sprites? =
+
+Learn about using <a href="http://www.w3schools.com/css/css_image_sprites.asp" title="Learn about using image sprites">image sprites</a> at W3.
+
 == Screenshots ==
 
 1. MCM adds a new tab in the Admin’s Sidebar. You can create your own subpages in mcm_menu.php in the Plugin directory.
@@ -70,9 +78,13 @@ Initial release.
 Fixed filepath issue for customizable mcm_menu.php file.
 
 = 1.0.3 =
-Company phone function now returns value instead of echo
+Company phone function now returns boolean value instead of echo
+
+= 1.0.4 =
+Customize social media icons with your own image sprite, including separate upstate and hover states
 
 == Upcoming Features ==
 
-1. Custom, update-proof social media images
-2. Automate adding PODS as subpages (currently a manual process in mcm_menu.php)
+1. <strike>Custom, update-proof social media images</strike>
+2. Automate adding Pods as subpages (currently a manual process in mcm_menu.php)
+3. Google Maps integration
