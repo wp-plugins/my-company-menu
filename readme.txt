@@ -68,7 +68,7 @@ Learn about using <a href="http://www.w3schools.com/css/css_image_sprites.asp" t
 
 1. MCM adds a new tab in the Admin’s Sidebar. You can create your own subpages in mcm_menu.php in the Plugin directory.
 2. Change the menu’s title and icon to match your client’s branding on the Help/Settings Page.
-3. Manage typical contact information like phone, fax, email, address...
+3. Manage typical contact information like phone, fax, email, address, etc.
 4. Manage social networking URLs.
 5. Now you can customize the upstate and hover state of your social media icons by using an image sprite.
 6. Convenient buttons added to TinyMCE WYSIWYG.
