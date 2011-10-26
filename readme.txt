@@ -70,7 +70,9 @@ Learn about using <a href="http://www.w3schools.com/css/css_image_sprites.asp" t
 2. Change the menu’s title and icon to match your client’s branding on the Help/Settings Page.
 3. Manage typical contact information like phone, fax, email, address...
 4. Manage social networking URLs.
-5. Convenient buttons added to TinyMCE WYSIWYG.
+5. Now you can customize the upstate and hover state of your social media icons by using an image sprite.
+6. Convenient buttons added to TinyMCE WYSIWYG.
+
 
 == Upgrade Notice ==
 
@@ -91,6 +93,5 @@ Bug fix: RSS feed coordinates not updating
 
 == Upcoming Features ==
 
-1. <strike>Custom, update-proof social media images</strike>
-2. Automate adding Pods as subpages (currently a manual process in mcm_menu.php)
-3. Google Maps integration
+1. Automate adding Pods as subpages (currently a manual process in mcm_menu.php)
+2. Google Maps integration
