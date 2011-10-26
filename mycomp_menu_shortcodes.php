@@ -85,7 +85,6 @@ function company_facebook() {
 function company_youtube() {
 	$options = get_mycomp_menu_contact();
 	$hoptions = get_mycomp_menu_help();
-	global $mcm_hoptions;
 	if($options['youtube'] != '') {
 		$myCompYoutube = '<a style="background-position: '.$hoptions['youtube_x'].'px '.$hoptions['youtube_y'].'px;" href="'.$options['youtube'].'" title="See our YouTube channel">YouTube channel</a>';
 		$social_youtube = 1;
@@ -113,7 +112,6 @@ function company_vimeo() {
 function company_linkedin() {
 	$options = get_mycomp_menu_contact();
 	$hoptions = get_mycomp_menu_help();
-	global $mcm_hoptions;
 	if($options['linkedin'] != '') {
 		$myCompLinkedin = '<a style="background-position: '.$hoptions['linkedin_x'].'px '.$hoptions['linkedin_y'].'px;" href="'.$options['linkedin'].'" title="See our LinkedIn profile">See our LinkedIn profile</a>';
 		$social_linkedin = 1;
@@ -127,7 +125,6 @@ function company_linkedin() {
 function company_twitter() {
 	$options = get_mycomp_menu_contact();
 	$hoptions = get_mycomp_menu_help();
-	global $mcm_hoptions;
 	if($options['twitter'] != '') {
 		$myCompTwitter = '<a style="background-position: '.$hoptions['twitter_x'].'px '.$hoptions['twitter_y'].'px;" href="'.$options['twitter'].'" title="Follow us on Twitter">Follow us on Twitter</a>';
 		$social_twitter = 1;
@@ -141,7 +138,6 @@ function company_twitter() {
 function company_rss() {
 	$options = get_mycomp_menu_contact();
 	$hoptions = get_mycomp_menu_help();
-	global $mcm_hoptions;
 	if($options['rss'] != '') {
 		$myCompRss = '<a style="background-position: '.$hoptions['rss_x'].'px '.$hoptions['rss_y'].'px;" href="'.$options['rss'].'" title="Subscribe via RSS">Subscribe via RSS</a>';
 		$social_rss = 1;
