@@ -4,7 +4,7 @@ Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 
 Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 
@@ -23,18 +23,26 @@ I include a Demo Page (mcm_menu.php located in the plugin directory). If you hav
 
 Each field has a shortcode beneath it that can be used on posts and pages to show the contents of the related input box. Theme developers can use the same shortcode as PHP functions in templates to display the data.
 
+New in 1.0.6, now you can customize the output of company_social() function with arguments.
+
 Complete breakdown of features can be found here: http://www.immense.net/company-menu-plugin-wordpress/
 
 == Installation ==
 
 1. Upload the `my-company-menu` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Select 'Company' from the admin sidebar and fill in necessary fields.
-4. Use shortcodes on pages and functions in template files to display information.
-5. Edit menu settings and social media icons on Help/Settings page.
-6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory.
+3. Select 'Company' from the admin sidebar and fill in necessary fields
+4. Use shortcodes on pages and functions in template files to display information
+5. Edit menu settings and social media icons on Help/Settings page
+6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory
 
 == Changelog ==
+
+= 1.0.6 =
+* Added Skype
+* Now you can customize the output of company_social() function
+* Bug fix: Upload image dialogues placing path in wrong input box
+* Bug fix: Issue with company_address shortcode
 
 = 1.0.5 =
 * Bug fix: RSS feed coordinates not updating
@@ -90,6 +98,12 @@ Customize social media icons with your own image sprite, including separate upst
 
 = 1.0.5 =
 Bug fix: RSS feed coordinates not updating
+
+= 1.0.6 =
+Added Skype
+Now you can customize the output of company_social() function
+Bug fix: Upload image dialogues placing path in wrong input box
+Bug fix: Issue with company_address shortcode
 
 == Upcoming Features ==
 

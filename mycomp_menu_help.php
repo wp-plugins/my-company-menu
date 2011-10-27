@@ -80,14 +80,19 @@
 							<td><input class="regular-text" type="text" name="mycomp_menu_facebook_y" value="<?php echo $hoptions['facebook_y']; ?>" id="mycomp_menu_facebook_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_facebook_y_hover" value="<?php echo $hoptions['facebook_y_hover']; ?>" id="mycomp_menu_facebook_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
 						</tr>
 						<tr>
+							<th scope="row"><label>Twitter</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_twitter_x" value="<?php echo $hoptions['twitter_x']; ?>" id="mycomp_menu_twitter_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_twitter_x_hover" value="<?php echo $hoptions['twitter_x_hover']; ?>" id="mycomp_menu_twitter_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_twitter_y" value="<?php echo $hoptions['twitter_y']; ?>" id="mycomp_menu_twitter_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_twitter_y_hover" value="<?php echo $hoptions['twitter_y_hover']; ?>" id="mycomp_menu_twitter_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
 							<th scope="row"><label>LinkedIn</label></th>
 							<td><input class="regular-text" type="text" name="mycomp_menu_linkedin_x" value="<?php echo $hoptions['linkedin_x']; ?>" id="mycomp_menu_linkedin_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_linkedin_x_hover" value="<?php echo $hoptions['linkedin_x_hover']; ?>" id="mycomp_menu_linkedin_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
 							<td><input class="regular-text" type="text" name="mycomp_menu_linkedin_y" value="<?php echo $hoptions['linkedin_y']; ?>" id="mycomp_menu_linkedin_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_linkedin_y_hover" value="<?php echo $hoptions['linkedin_y_hover']; ?>" id="mycomp_menu_linkedin_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
 						</tr>
 						<tr>
-							<th scope="row"><label>Twitter</label></th>
-							<td><input class="regular-text" type="text" name="mycomp_menu_twitter_x" value="<?php echo $hoptions['twitter_x']; ?>" id="mycomp_menu_twitter_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_twitter_x_hover" value="<?php echo $hoptions['twitter_x_hover']; ?>" id="mycomp_menu_twitter_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
-							<td><input class="regular-text" type="text" name="mycomp_menu_twitter_y" value="<?php echo $hoptions['twitter_y']; ?>" id="mycomp_menu_twitter_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_twitter_y_hover" value="<?php echo $hoptions['twitter_y_hover']; ?>" id="mycomp_menu_twitter_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+							<th scope="row"><label>Skype</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_skype_x" value="<?php echo $hoptions['skype_x']; ?>" id="mycomp_menu_skype_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_skype_x_hover" value="<?php echo $hoptions['skype_x_hover']; ?>" id="mycomp_menu_skype_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_skype_y" value="<?php echo $hoptions['skype_y']; ?>" id="mycomp_menu_skype_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_skype_y_hover" value="<?php echo $hoptions['skype_y_hover']; ?>" id="mycomp_menu_skype_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
 						</tr>
 						<tr>
 							<th scope="row"><label>YouTube</label></th>
@@ -108,7 +113,7 @@
 							<td><p>Display available social media icons: [company_social]</p></td>
 							<td><?php
 								if(company_social()) {
-									echo company_social('ul', 'li');
+									echo company_social('', '<li><span class="description">Available icons</span></li>');
 								} else {
 									echo '<span class="description">Insert URLs on Company Page to show how icons will look on frontend.</span>';
 								}
@@ -127,15 +132,31 @@
 				<h3>For theme developers</h3>
 				<div class="section">
 					<p>All shortcodes will return boolean values. You should verify if each field has a value, then echo something based on success/failure. Each shortcode shares the name of the function for your template pages.</p>
+					<h4>Best-practice way to show data</h4>
 					<p>For example, the shortcode for the Company Phone Number is [company_phone]. So, incorporate this into your template with:</p>
-					<pre>
-	&lt;?php
-	  if(company_phone()) {
-	    echo company_phone();
-	  } else {
-	  	echo 'No phone number entered';
-	  }
-	?&gt;</pre>
+<pre>
+&lt;?php
+if(company_phone()) {
+  echo company_phone();
+} else {
+  echo 'No phone number entered';
+}
+?&gt;</pre>
+				<h4>Customize social media listing</h4>
+				<p>Custom the output of the Social Media icons by providing arguments for the function.</p>
+				<p>company_social('before', 'after', 'containerElement', 'listElement');</p>
+				<ul>
+					<li><strong>before:</strong> Markup placed <em>before</em> individual list elements</li>
+					<li><strong>after:</strong> Markup placed <em>after</em> individual list elements</li>
+					<li><strong>containerElement:</strong> Container element (default 'ul')</li>
+					<li><strong>listElement:</strong> List element of each item (default 'li')</li>
+				</ul>
+<pre>
+&lt;?php
+if(company_social()) {
+   echo company_social('&lt;li&gt;&lt;strong&gt;Social media: &lt;/strong&gt;&lt;/li&gt;');
+}
+?&gt;</pre>
 					</form>
 					<form name="mycomp_reset_form" method="post" action="<?php reset_mycomp_menu() ?>">
 						<h4>Full Uninstall</h4>

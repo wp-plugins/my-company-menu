@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: My Company Menu
-Version: 1.0.5
+Version: 1.0.6
 Plugin URI: http://www.jasonmichaelcross.com/
 Description: Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 Author: Immense Networks | Jason Michael Cross
@@ -9,7 +9,7 @@ Author URI: http://www.immense.net/
 */
 
 /* Definitions */
-define('MYCOMP_MENU_VERSION', '1.0.5');
+define('MYCOMP_MENU_VERSION', '1.0.6');
 define('MYCOMP_MENU_URL', plugin_dir_url( __FILE__ ));
 
 register_activation_hook( __FILE__, 'set_mycomp_menu_activate' );
@@ -82,6 +82,11 @@ function set_mycomp_menu_activate() {
 	add_option('mycomp_menu_gplus_y', '0');
 	add_option('mycomp_menu_gplus_x_hover', '0');
 	add_option('mycomp_menu_gplus_y_hover', '-16');
+	add_option('mycomp_menu_skype', '');
+	add_option('mycomp_menu_skype_x', '-112');
+	add_option('mycomp_menu_skype_y', '0');
+	add_option('mycomp_menu_skype_x_hover', '-112');
+	add_option('mycomp_menu_skype_y_hover', '-16');
 	add_option('mycomp_menu_rss', '');
 	add_option('mycomp_menu_rss_x', '-96');
 	add_option('mycomp_menu_rss_y', '0');
@@ -121,6 +126,7 @@ function get_mycomp_menu_contact() {
 		'vimeo' => get_option('mycomp_menu_vimeo'),
 		'gplus' => get_option('mycomp_menu_gplus'),
 		'rss' => get_option('mycomp_menu_rss'),
+		'skype' => get_option('mycomp_menu_skype'),
 		'disclaimer' => get_option('mycomp_menu_disclaimer'),
 		//'gmapcode' => get_option('mycomp_menu_gmapcode'),
 	);
@@ -134,6 +140,8 @@ function get_mycomp_menu_help() {
 	'socialsprite' => get_option('mycomp_menu_socialsprite'),
 	'socialsprite_icon_width' => get_option('mycomp_menu_socialsprite_icon_width'),
 	'socialsprite_icon_height' => get_option('mycomp_menu_socialsprite_icon_height'),
+	'skype_x' => get_option('mycomp_menu_skype_x'),
+	'skype_y' => get_option('mycomp_menu_skype_y'),
 	'gplus_x' => get_option('mycomp_menu_gplus_x'),
 	'gplus_y' => get_option('mycomp_menu_gplus_y'),
 	'vimeo_x' => get_option('mycomp_menu_vimeo_x'),
@@ -150,6 +158,8 @@ function get_mycomp_menu_help() {
 	'rss_y' => get_option('mycomp_menu_rss_y'),
 	'gplus_x_hover' => get_option('mycomp_menu_gplus_x_hover'),
 	'gplus_y_hover' => get_option('mycomp_menu_gplus_y_hover'),
+	'skype_x_hover' => get_option('mycomp_menu_skype_x_hover'),
+	'skype_y_hover' => get_option('mycomp_menu_skype_y_hover'),
 	'vimeo_x_hover' => get_option('mycomp_menu_vimeo_x_hover'),
 	'vimeo_y_hover' => get_option('mycomp_menu_vimeo_y_hover'),
 	'youtube_x_hover' => get_option('mycomp_menu_youtube_x_hover'),

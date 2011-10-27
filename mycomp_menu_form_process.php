@@ -24,6 +24,7 @@ function update_mycomp_menu() {
 	update_option('mycomp_menu_youtube', $_REQUEST['mycomp_menu_youtube']);
 	update_option('mycomp_menu_vimeo', $_REQUEST['mycomp_menu_vimeo']);
 	update_option('mycomp_menu_gplus', $_REQUEST['mycomp_menu_gplus']);
+	update_option('mycomp_menu_skype', $_REQUEST['mycomp_menu_skype']);
 	update_option('mycomp_menu_rss', $_REQUEST['mycomp_menu_rss']);
 	update_option('mycomp_menu_disclaimer', $_REQUEST['mycomp_menu_disclaimer']);
 	//update_option('mycomp_menu_gmapcode', $_REQUEST['mycomp_menu_gmapcode']);
@@ -71,6 +72,9 @@ function unset_mycomp_menu_deactivate() {
 	delete_option('mycomp_menu_gplus');
 	delete_option('mycomp_menu_gplus_x');
 	delete_option('mycomp_menu_gplus_y');
+	delete_option('mycomp_menu_skype');
+	delete_option('mycomp_menu_skype_x');
+	delete_option('mycomp_menu_skype_y');
 	delete_option('mycomp_menu_rss');
 	delete_option('mycomp_menu_rss_x');
 	delete_option('mycomp_menu_rss_y');
@@ -86,6 +90,8 @@ function unset_mycomp_menu_deactivate() {
 	delete_option('mycomp_menu_vimeo_y_hover');
 	delete_option('mycomp_menu_gplus_x_hover');
 	delete_option('mycomp_menu_gplus_y_hover');
+	delete_option('mycomp_menu_skype_x_hover');
+	delete_option('mycomp_menu_skype_y_hover');
 	delete_option('mycomp_menu_rss_x_hover');
 	delete_option('mycomp_menu_rss_y_hover');
 	delete_option('mycomp_menu_disclaimer');
@@ -117,6 +123,8 @@ function update_mycomp_menu_help() {
 	update_option('mycomp_menu_vimeo_y', $_POST['mycomp_menu_vimeo_y']);
 	update_option('mycomp_menu_gplus_x', $_POST['mycomp_menu_gplus_x']);
 	update_option('mycomp_menu_gplus_y', $_POST['mycomp_menu_gplus_y']);
+	update_option('mycomp_menu_skype_x', $_POST['mycomp_menu_skype_x']);
+	update_option('mycomp_menu_skype_y', $_POST['mycomp_menu_skype_y']);
 	update_option('mycomp_menu_rss_x', $_POST['mycomp_menu_rss_x']);
 	update_option('mycomp_menu_rss_y', $_POST['mycomp_menu_rss_y']);
 	update_option('mycomp_menu_facebook_x_hover', $_POST['mycomp_menu_facebook_x_hover']);
@@ -133,6 +141,8 @@ function update_mycomp_menu_help() {
 	update_option('mycomp_menu_gplus_y_hover', $_POST['mycomp_menu_gplus_y_hover']);
 	update_option('mycomp_menu_rss_x_hover', $_POST['mycomp_menu_rss_x_hover']);
 	update_option('mycomp_menu_rss_y_hover', $_POST['mycomp_menu_rss_y_hover']);
+	update_option('mycomp_menu_skype_x_hover', $_POST['mycomp_menu_skype_x_hover']);
+	update_option('mycomp_menu_skype_y_hover', $_POST['mycomp_menu_skype_y_hover']);
 ?>
 <div id="message" class="updated fade">
 	<p>Options saved. You may need to refresh this page to see changes.</p>

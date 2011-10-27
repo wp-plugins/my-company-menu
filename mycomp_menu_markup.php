@@ -170,12 +170,16 @@
 								<td><input class="regular-text" type="text" name="mycomp_menu_facebook" value="<?php echo $options['facebook']; ?>" id="mycomp_menu_facebook" /><br /><span class="description">Shortcode <code> [company_facebook]</code></td>
 							</tr>
 							<tr>
+								<th scope="row"><label for="mycomp_menu_twitter">Twitter (URL)</label></th>
+								<td><input class="regular-text" type="text" name="mycomp_menu_twitter" value="<?php echo $options['twitter']; ?>" id="mycomp_menu_twitter" /><br /><span class="description">Shortcode <code> [company_twitter]</code></td>
+							</tr>
+							<tr>
 								<th scope="row"><label for="mycomp_menu_linkedin">LinkedIn (URL)</label></th>
 								<td><input class="regular-text" type="text" name="mycomp_menu_linkedin" value="<?php echo $options['linkedin']; ?>" id="mycomp_menu_linkedin" /><br /><span class="description">Shortcode <code> [company_linkedin]</code></td>
 							</tr>
 							<tr>
-								<th scope="row"><label for="mycomp_menu_twitter">Twitter (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_twitter" value="<?php echo $options['twitter']; ?>" id="mycomp_menu_twitter" /><br /><span class="description">Shortcode <code> [company_twitter]</code></td>
+								<th scope="row"><label for="mycomp_menu_skype">Skype (URL)</label></th>
+								<td><input class="regular-text" type="text" name="mycomp_menu_skype" value="<?php echo $options['skype']; ?>" id="mycomp_menu_skype" /><br /><span class="description">Shortcode <code> [company_skype]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_youtube">YouTube Channel (URL)</label></th>
@@ -197,7 +201,7 @@
 									<td><p>Display available social media icons: [company_social]</p></td>
 									<td><?php
 										if(company_social()) {
-											echo company_social('ul', 'li');
+											echo company_social('', '<li><span class="description">Available icons</span></li>');
 										} else {
 											echo '<span class="description">Insert URLs above to show how icons will look on frontend.</span>';
 										}

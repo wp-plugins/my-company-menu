@@ -12,7 +12,7 @@ add_shortcode('company_phone', 'company_phone');
 add_shortcode('company_tollfree', 'company_tollfree');
 add_shortcode('company_fax', 'company_fax');
 add_shortcode('company_address', 'company_address');
-add_shortcode('company_address', 'company_address_oneline');
+add_shortcode('company_address_oneline', 'company_address_oneline');
 add_shortcode('company_email', 'company_email');
 add_shortcode('company', 'company_all');
 add_shortcode('company_facebook', 'company_facebook');
@@ -21,6 +21,7 @@ add_shortcode('company_twitter', 'company_twitter');
 add_shortcode('company_youtube', 'company_youtube');
 add_shortcode('company_vimeo', 'company_vimeo');
 add_shortcode('company_gplus', 'company_gplus');
+add_shortcode('company_skype', 'company_skype');
 add_shortcode('company_rss', 'company_rss');
 add_shortcode('company_social', 'company_social');
 add_shortcode('company_disclaimer', 'company_disclaimer');
@@ -46,7 +47,7 @@ function company_fax() {
 
 function company_disclaimer($tag = "p") {
 	$options = get_mycomp_menu_contact();
-	echo '<'.$tag.'>'.$options['disclaimer'].'</'.$tag.'>';
+	return $options['disclaimer'];
 }
 
 function company_email() {
@@ -64,6 +65,19 @@ function company_gplus() {
 		$social_gplus = 1;
 		$myComp_hasSocial = 1;
 		return $myCompGplus;
+	} else {
+		return false;
+	}
+}
+
+function company_skype() {
+	$options = get_mycomp_menu_contact();
+	$hoptions = get_mycomp_menu_help();
+	if($options['skype'] != '') {
+		$myCompSkype = '<a style="background-position: '.$hoptions['skype_x'].'px '.$hoptions['skype_y'].'px;" href="'.$options['skype'].'" title="See us on Skype">Skype</a>';
+		$social_skype = 1;
+		$myComp_hasSocial = 1;
+		return $myCompSkype;
 	} else {
 		return false;
 	}
@@ -148,7 +162,7 @@ function company_rss() {
 	}
 }
 
-function company_social($container = "ul", $each = "li") {
+function company_social($socialbefore = "", $socialafter = "", $container = "ul", $each = "li") {
 	$options = get_mycomp_menu_contact();
 	$hoptions = get_mycomp_menu_help();
 	$gplus = company_gplus();
@@ -157,6 +171,7 @@ function company_social($container = "ul", $each = "li") {
 	$linkedin = company_linkedin();
 	$youtube = company_youtube();
 	$vimeo = company_vimeo();
+	$skype = company_skype();
 	$rss = company_rss();
 
 	if($gplus) {
@@ -175,6 +190,10 @@ function company_social($container = "ul", $each = "li") {
 		$linkedin = '<'.$each.' class="mcm_linkedin">'.$linkedin.'</'.$each.'>';
 		$hasSocial = 1;
 	}
+	if($skype) {
+		$skype = '<'.$each.' class="mcm_skype">'.$skype.'</'.$each.'>';
+		$hasSocial = 1;
+	}
 	if($youtube) {
 		$youtube = '<'.$each.' class="mcm_youtube">'.$youtube.'</'.$each.'>';
 		$hasSocial = 1;
@@ -188,10 +207,10 @@ function company_social($container = "ul", $each = "li") {
 		$hasSocial = 1;
 	}
 
-	if($facebook || $twitter || $linkedin || $youtube || $vimeo || $gplus || $rss) {
+	if($facebook || $twitter || $linkedin || $youtube || $skype || $vimeo || $gplus || $rss) {
 		$myComp_social = 
 		'<'.$container.' class="mcm_social">'.
-			$gplus . $facebook . $twitter . $linkedin . $youtube . $vimeo . $rss .
+			$socialbefore . $gplus . $facebook . $twitter . $linkedin . $skype . $youtube . $vimeo . $rss . $socialafter .
 		'</'.$container.'> <!-- /social -->';
 		$mcm_socialsprite = '
 			<style>
@@ -225,7 +244,7 @@ function company_address() {
 		} else {
 			$myCompAddress = '<address>' . $options['add1'] . '<br />' . $options['city'] . ', ' . $options['state'] . ' ' . $options['zip'] . '</address>';
 		}
-		echo $myCompAddress;
+		return $myCompAddress;
 	} else {
 		return false;
 	}
@@ -241,7 +260,7 @@ function company_address_oneline() {
 		} else {
 			$myCompAddress = '<address>' . $options['add1'] . ' ' . $options['city'] . ', ' . $options['state'] . ' ' . $options['zip'] . '</address>';
 		}
-		echo $myCompAddress;
+		return $myCompAddress;
 	} else {
 		return false;
 	}
