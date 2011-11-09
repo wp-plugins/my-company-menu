@@ -167,7 +167,7 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 			<style>
 				.mcm_social {overflow: hidden;}
 				.mcm_social li {float: right; margin-right: 5px; list-style: none;}
-				.mcm_social li a {text-indent: -9999em; display: block; background-image: url("'.$hoptions['socialsprite'].'?ver='.rand(1, 1000).'"); background-repeat: no-repeat; width: '.$hoptions['socialsprite_icon_width'].'px; height: '.$hoptions['socialsprite_icon_height'].'px;}
+				.mcm_social li a {text-indent: 9999em; display: block; background-image: url("'.$hoptions['socialsprite'].'?ver='.rand(1, 1000).'"); background-repeat: no-repeat; width: '.$hoptions['socialsprite_icon_width'].'px; height: '.$hoptions['socialsprite_icon_height'].'px;}
 				.mcm_social li.mcm_gplus a:hover {background-position: '.$hoptions['gplus_x_hover'].'px '.$hoptions['gplus_y_hover'].'px !important;}
 				.mcm_social li.mcm_facebook a:hover {background-position: '.$hoptions['facebook_x_hover'].'px '.$hoptions['facebook_y_hover'].'px !important;}
 				.mcm_social li.mcm_twitter a:hover {background-position: '.$hoptions['twitter_x_hover'].'px '.$hoptions['twitter_y_hover'].'px !important;}
