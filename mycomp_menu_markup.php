@@ -67,6 +67,7 @@
 									<?php
 										$selected = 'selected="selected" ';
 									?>
+											<option <?php if($options['state'] === "") {echo $selected;} ?>value=""></option>
 											<option <?php if($options['state'] === "AK") {echo $selected;} ?>value="AK">AK</option>
 											<option <?php if($options['state'] === "AL") {echo $selected;} ?>value="AL">AL</option>
 											<option <?php if($options['state'] === "AR") {echo $selected;} ?>value="AR">AR</option>
@@ -135,7 +136,7 @@
 										if(company_address()) {
 											echo company_address();
 										} else {
-											echo '<span class="description">Insert values in the address fields above to see how it\'ll look on the frontend.</span>';
+											echo '<span class="description">[Insert values in the address fields above to see how it\'ll look on the frontend]</span>';
 										}
 									 ?></td>
 								</tr>
@@ -145,7 +146,7 @@
 										if(company_address_oneline()) {
 											echo company_address_oneline();
 										} else {
-											echo '<span class="description">Insert values in the address fields above to see how it\'ll look on the frontend.</span>';
+											echo '<span class="description">[Insert values in the address fields above to see how it\'ll look on the frontend]</span>';
 										}
 									 ?></td>
 								</tr>
@@ -159,7 +160,7 @@
 				<div class="postbox">
 					<h3>Social Networking</h3>
 					<div class="section">
-					<p>Use entire URL, including the http://</p>
+					<p>Provide the <strong>complete URL</strong> to each social network in the boxes below, including http://www.somesite.com</p>
 						<table class="form-table">
 							<tr>
 								<th scope="row"><label for="mycomp_menu_gplus">Google+ (URL)</label></th>
@@ -193,9 +194,13 @@
 								<th scope="row"><label for="mycomp_menu_rss">RSS Feed (URL)</label></th>
 								<td><input class="regular-text" type="text" name="mycomp_menu_rss" value="<?php echo $options['rss']; ?>" id="mycomp_menu_rss" /><br /><span class="description">Shortcode <code> [company_rss]</code></td>
 							</tr>
+							<tr>
+								<th scope="row"><label for="mycomp_menu_stumble">StumbleUpon (URL)</label></th>
+								<td><input type="checkbox" name="mycomp_menu_stumble" id="mycomp_menu_stumble"<?php if($options['stumble']){echo ' checked="checked"';}  ?> /><br /><span class="description">Check here to let users add this site to Stumble.</span></td>
+							</tr>
 						</table>
 						<h4>Show all social networks</h4>
-							<p>Fill in URLs above to enable each social network.</p>
+							<p>Fill in URLs above to enable each social network. Change the icons using an image sprite on the Help/Settings page.</p>
 							<table class="form-table">
 								<tr>
 									<td><p>Display available social media icons: [company_social]</p></td>
@@ -203,7 +208,7 @@
 										if(company_social()) {
 											echo company_social('', '<li><span class="description">Available icons</span></li>');
 										} else {
-											echo '<span class="description">Insert URLs above to show how icons will look on frontend.</span>';
+											echo '<span class="description">[Insert URLs above to show how icons will look on frontend]</span>';
 										}
 									?></td>
 								</tr>

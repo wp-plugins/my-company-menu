@@ -27,6 +27,7 @@ function update_mycomp_menu() {
 	update_option('mycomp_menu_skype', $_REQUEST['mycomp_menu_skype']);
 	update_option('mycomp_menu_rss', $_REQUEST['mycomp_menu_rss']);
 	update_option('mycomp_menu_disclaimer', $_REQUEST['mycomp_menu_disclaimer']);
+	update_option('mycomp_menu_stumble', $_REQUEST['mycomp_menu_stumble']);
 	//update_option('mycomp_menu_gmapcode', $_REQUEST['mycomp_menu_gmapcode']);
 ?>
 <div id="message" class="updated fade">
@@ -78,6 +79,15 @@ function unset_mycomp_menu_deactivate() {
 	delete_option('mycomp_menu_rss');
 	delete_option('mycomp_menu_rss_x');
 	delete_option('mycomp_menu_rss_y');
+	delete_option('mycomp_menu_stumble');
+	delete_option('mycomp_menu_stumble_x');
+	delete_option('mycomp_menu_stumble_y');
+	delete_option('mycomp_menu_disclaimer');
+
+	//help page
+	delete_option('mycomp_menu_icon');
+	delete_option('mycomp_menu_compname');
+	delete_option('mycomp_menu_showdemo');
 	delete_option('mycomp_menu_facebook_x_hover');
 	delete_option('mycomp_menu_facebook_y_hover');
 	delete_option('mycomp_menu_linkedin_x_hover');
@@ -94,12 +104,8 @@ function unset_mycomp_menu_deactivate() {
 	delete_option('mycomp_menu_skype_y_hover');
 	delete_option('mycomp_menu_rss_x_hover');
 	delete_option('mycomp_menu_rss_y_hover');
-	delete_option('mycomp_menu_disclaimer');
-
-	//help page
-	delete_option('mycomp_menu_icon');
-	delete_option('mycomp_menu_compname');
-	delete_option('mycomp_menu_showdemo');
+	delete_option('mycomp_menu_stumble_x_hover');
+	delete_option('mycomp_menu_stumble_y_hover');
 	//delete_option('mycomp_menu_gmacode');
 }
 
@@ -127,6 +133,8 @@ function update_mycomp_menu_help() {
 	update_option('mycomp_menu_skype_y', $_POST['mycomp_menu_skype_y']);
 	update_option('mycomp_menu_rss_x', $_POST['mycomp_menu_rss_x']);
 	update_option('mycomp_menu_rss_y', $_POST['mycomp_menu_rss_y']);
+	update_option('mycomp_menu_stumble_x', $_POST['mycomp_menu_stumble_x']);
+	update_option('mycomp_menu_stumble_y', $_POST['mycomp_menu_stumble_y']);
 	update_option('mycomp_menu_facebook_x_hover', $_POST['mycomp_menu_facebook_x_hover']);
 	update_option('mycomp_menu_facebook_y_hover', $_POST['mycomp_menu_facebook_y_hover']);
 	update_option('mycomp_menu_linkedin_x_hover', $_POST['mycomp_menu_linkedin_x_hover']);
@@ -141,6 +149,8 @@ function update_mycomp_menu_help() {
 	update_option('mycomp_menu_gplus_y_hover', $_POST['mycomp_menu_gplus_y_hover']);
 	update_option('mycomp_menu_rss_x_hover', $_POST['mycomp_menu_rss_x_hover']);
 	update_option('mycomp_menu_rss_y_hover', $_POST['mycomp_menu_rss_y_hover']);
+	update_option('mycomp_menu_stumble_x_hover', $_POST['mycomp_menu_stumble_x_hover']);
+	update_option('mycomp_menu_stumble_y_hover', $_POST['mycomp_menu_stumble_y_hover']);
 	update_option('mycomp_menu_skype_x_hover', $_POST['mycomp_menu_skype_x_hover']);
 	update_option('mycomp_menu_skype_y_hover', $_POST['mycomp_menu_skype_y_hover']);
 ?>

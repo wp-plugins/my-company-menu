@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: My Company Menu
-Version: 1.0.6
+Version: 1.0.7
 Plugin URI: http://www.jasonmichaelcross.com/
 Description: Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 Author: Immense Networks | Jason Michael Cross
@@ -9,8 +9,9 @@ Author URI: http://www.immense.net/
 */
 
 /* Definitions */
-define('MYCOMP_MENU_VERSION', '1.0.6');
+define('MYCOMP_MENU_VERSION', '1.0.7');
 define('MYCOMP_MENU_URL', plugin_dir_url( __FILE__ ));
+define('CURRENT_PAGE', 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 register_activation_hook( __FILE__, 'set_mycomp_menu_activate' );
 
@@ -92,10 +93,15 @@ function set_mycomp_menu_activate() {
 	add_option('mycomp_menu_rss_y', '0');
 	add_option('mycomp_menu_rss_x_hover', '-96');
 	add_option('mycomp_menu_rss_y_hover', '-16');
+	add_option('mycomp_menu_stumble', '');
+	add_option('mycomp_menu_stumble_x', '-128');
+	add_option('mycomp_menu_stumble_y', '0');
+	add_option('mycomp_menu_stumble_x_hover', '-128');
+	add_option('mycomp_menu_stumble_y_hover', '-16');
 	add_option('mycomp_menu_disclaimer', '');
 	//help page
 	add_option('mycomp_menu_icon', MYCOMP_MENU_URL.'images/mycomp_icon.png');
-	add_option('mycomp_menu_compname', 'Company');
+	add_option('mycomp_menu_compname', 'My Company');
 	add_option('mycomp_menu_showdemo', '');
 	//add_option('mycomp_menu_gmapcode', '');
 }
@@ -109,69 +115,74 @@ add_action("admin_print_styles",'mycomp_menu_load_styles');
 /* Returns array of values for admin options page */
 function get_mycomp_menu_contact() {
 	return array(
-		'dbversion' => get_option('mycomp_menu_dbversion'),
-		'phone' => get_option('mycomp_menu_phone'),
-		'tollfree' => get_option('mycomp_menu_tollfree'),
-		'fax' => get_option('mycomp_menu_fax'),
-		'add1' => get_option('mycomp_menu_add1'),
-		'add2' => get_option('mycomp_menu_add2'),
-		'city' => get_option('mycomp_menu_city'),
-		'state' => get_option('mycomp_menu_state'),
-		'zip' => get_option('mycomp_menu_zip'),
-		'email' => get_option('mycomp_menu_email'),
-		'facebook' => get_option('mycomp_menu_facebook'),
-		'linkedin' => get_option('mycomp_menu_linkedin'),
-		'twitter' => get_option('mycomp_menu_twitter'),
-		'youtube' => get_option('mycomp_menu_youtube'),
-		'vimeo' => get_option('mycomp_menu_vimeo'),
-		'gplus' => get_option('mycomp_menu_gplus'),
-		'rss' => get_option('mycomp_menu_rss'),
-		'skype' => get_option('mycomp_menu_skype'),
-		'disclaimer' => get_option('mycomp_menu_disclaimer'),
+		'dbversion'		=> get_option('mycomp_menu_dbversion'),
+		'phone'			=> get_option('mycomp_menu_phone'),
+		'tollfree'		=> get_option('mycomp_menu_tollfree'),
+		'fax'			=> get_option('mycomp_menu_fax'),
+		'add1'			=> get_option('mycomp_menu_add1'),
+		'add2'			=> get_option('mycomp_menu_add2'),
+		'city'			=> get_option('mycomp_menu_city'),
+		'state'			=> get_option('mycomp_menu_state'),
+		'zip'			=> get_option('mycomp_menu_zip'),
+		'email'			=> get_option('mycomp_menu_email'),
+		'facebook'		=> get_option('mycomp_menu_facebook'),
+		'linkedin'		=> get_option('mycomp_menu_linkedin'),
+		'twitter'		=> get_option('mycomp_menu_twitter'),
+		'youtube'		=> get_option('mycomp_menu_youtube'),
+		'vimeo'			=> get_option('mycomp_menu_vimeo'),
+		'gplus'			=> get_option('mycomp_menu_gplus'),
+		'rss'			=> get_option('mycomp_menu_rss'),
+		'skype'			=> get_option('mycomp_menu_skype'),
+		'disclaimer'	=> get_option('mycomp_menu_disclaimer'),
+		'stumble'		=> get_option('mycomp_menu_stumble'),
 		//'gmapcode' => get_option('mycomp_menu_gmapcode'),
 	);
 }
 
 function get_mycomp_menu_help() {
 	return array(
-	'icon' => get_option('mycomp_menu_icon'),
-	'compname' => get_option('mycomp_menu_compname'),
-	'showdemo' => get_option('mycomp_menu_showdemo'),
-	'socialsprite' => get_option('mycomp_menu_socialsprite'),
-	'socialsprite_icon_width' => get_option('mycomp_menu_socialsprite_icon_width'),
-	'socialsprite_icon_height' => get_option('mycomp_menu_socialsprite_icon_height'),
-	'skype_x' => get_option('mycomp_menu_skype_x'),
-	'skype_y' => get_option('mycomp_menu_skype_y'),
-	'gplus_x' => get_option('mycomp_menu_gplus_x'),
-	'gplus_y' => get_option('mycomp_menu_gplus_y'),
-	'vimeo_x' => get_option('mycomp_menu_vimeo_x'),
-	'vimeo_y' => get_option('mycomp_menu_vimeo_y'),
-	'youtube_x' => get_option('mycomp_menu_youtube_x'),
-	'youtube_y' => get_option('mycomp_menu_youtube_y'),
-	'twitter_x' => get_option('mycomp_menu_twitter_x'),
-	'twitter_y' => get_option('mycomp_menu_twitter_y'),
-	'linkedin_x' => get_option('mycomp_menu_linkedin_x'),
-	'linkedin_y' => get_option('mycomp_menu_linkedin_y'),
-	'facebook_x' => get_option('mycomp_menu_facebook_x'),
-	'facebook_y' => get_option('mycomp_menu_facebook_y'),
-	'rss_x' => get_option('mycomp_menu_rss_x'),
-	'rss_y' => get_option('mycomp_menu_rss_y'),
-	'gplus_x_hover' => get_option('mycomp_menu_gplus_x_hover'),
-	'gplus_y_hover' => get_option('mycomp_menu_gplus_y_hover'),
-	'skype_x_hover' => get_option('mycomp_menu_skype_x_hover'),
-	'skype_y_hover' => get_option('mycomp_menu_skype_y_hover'),
-	'vimeo_x_hover' => get_option('mycomp_menu_vimeo_x_hover'),
-	'vimeo_y_hover' => get_option('mycomp_menu_vimeo_y_hover'),
-	'youtube_x_hover' => get_option('mycomp_menu_youtube_x_hover'),
-	'youtube_y_hover' => get_option('mycomp_menu_youtube_y_hover'),
-	'twitter_x_hover' => get_option('mycomp_menu_twitter_x_hover'),
-	'twitter_y_hover' => get_option('mycomp_menu_twitter_y_hover'),
-	'linkedin_x_hover' => get_option('mycomp_menu_linkedin_x_hover'),
-	'linkedin_y_hover' => get_option('mycomp_menu_linkedin_y_hover'),
-	'facebook_x_hover' => get_option('mycomp_menu_facebook_x_hover'),
-	'facebook_y_hover' => get_option('mycomp_menu_facebook_y_hover'),
-	'rss_x_hover' => get_option('mycomp_menu_rss_x_hover'),
-	'rss_y_hover' => get_option('mycomp_menu_rss_y_hover'),
+	'icon'						=> get_option('mycomp_menu_icon'),
+	'compname'					=> get_option('mycomp_menu_compname'),
+	'showdemo'					=> get_option('mycomp_menu_showdemo'),
+	'socialsprite'				=> get_option('mycomp_menu_socialsprite'),
+	'socialsprite_icon_width'	=> get_option('mycomp_menu_socialsprite_icon_width'),
+	'socialsprite_icon_height'	=> get_option('mycomp_menu_socialsprite_icon_height'),
+	'skype_x'					=> get_option('mycomp_menu_skype_x'),
+	'skype_y'					=> get_option('mycomp_menu_skype_y'),
+	'gplus_x'					=> get_option('mycomp_menu_gplus_x'),
+	'gplus_y'					=> get_option('mycomp_menu_gplus_y'),
+	'vimeo_x'					=> get_option('mycomp_menu_vimeo_x'),
+	'vimeo_y'					=> get_option('mycomp_menu_vimeo_y'),
+	'youtube_x'					=> get_option('mycomp_menu_youtube_x'),
+	'youtube_y'					=> get_option('mycomp_menu_youtube_y'),
+	'twitter_x'					=> get_option('mycomp_menu_twitter_x'),
+	'twitter_y'					=> get_option('mycomp_menu_twitter_y'),
+	'linkedin_x'				=> get_option('mycomp_menu_linkedin_x'),
+	'linkedin_y'				=> get_option('mycomp_menu_linkedin_y'),
+	'facebook_x'				=> get_option('mycomp_menu_facebook_x'),
+	'facebook_y'				=> get_option('mycomp_menu_facebook_y'),
+	'rss_x'						=> get_option('mycomp_menu_rss_x'),
+	'rss_y'						=> get_option('mycomp_menu_rss_y'),
+	'stumble_x'					=> get_option('mycomp_menu_stumble_x'),
+	'stumble_y'					=> get_option('mycomp_menu_stumble_y'),
+	'gplus_x_hover'				=> get_option('mycomp_menu_gplus_x_hover'),
+	'gplus_y_hover'				=> get_option('mycomp_menu_gplus_y_hover'),
+	'skype_x_hover'				=> get_option('mycomp_menu_skype_x_hover'),
+	'skype_y_hover'				=> get_option('mycomp_menu_skype_y_hover'),
+	'vimeo_x_hover'				=> get_option('mycomp_menu_vimeo_x_hover'),
+	'vimeo_y_hover'				=> get_option('mycomp_menu_vimeo_y_hover'),
+	'youtube_x_hover'			=> get_option('mycomp_menu_youtube_x_hover'),
+	'youtube_y_hover'			=> get_option('mycomp_menu_youtube_y_hover'),
+	'twitter_x_hover'			=> get_option('mycomp_menu_twitter_x_hover'),
+	'twitter_y_hover'			=> get_option('mycomp_menu_twitter_y_hover'),
+	'linkedin_x_hover'			=> get_option('mycomp_menu_linkedin_x_hover'),
+	'linkedin_y_hover'			=> get_option('mycomp_menu_linkedin_y_hover'),
+	'facebook_x_hover'			=> get_option('mycomp_menu_facebook_x_hover'),
+	'facebook_y_hover'			=> get_option('mycomp_menu_facebook_y_hover'),
+	'rss_x_hover'				=> get_option('mycomp_menu_rss_x_hover'),
+	'rss_y_hover'				=> get_option('mycomp_menu_rss_y_hover'),
+	'stumble_x_hover'			=> get_option('mycomp_menu_stumble_x_hover'),
+	'stumble_y_hover'			=> get_option('mycomp_menu_stumble_y_hover'),
 	);
 }
 

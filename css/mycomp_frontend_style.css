@@ -6,4 +6,4 @@
  */
 
  .mcm_social {overflow: hidden;}
- .mcm_social li {float: right; margin-right: 5px; }
+ .mcm_social li {float: right; margin-right: 5px; list-style: none;}

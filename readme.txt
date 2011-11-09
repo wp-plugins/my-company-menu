@@ -4,7 +4,7 @@ Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 
 Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 
@@ -37,6 +37,12 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory
 
 == Changelog ==
+
+= 1.0.7 =
+* Cleaned up functions and other code
+* Added submit current page to StumbleUpon option in social media section
+* Added random version number to sprite image to ensure end-user isn't caching outdated image
+* Known issue: [company_social] shortcode on post/page removes container element
 
 = 1.0.6 =
 * Added Skype
@@ -85,10 +91,10 @@ Learn about using <a href="http://www.w3schools.com/css/css_image_sprites.asp" t
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release.
+Initial release
 
 = 1.0.2 =
-Fixed filepath issue for customizable mcm_menu.php file.
+Fixed filepath issue for customizable mcm_menu.php file
 
 = 1.0.3 =
 Company phone function now returns boolean value instead of echo
@@ -105,7 +111,13 @@ Now you can customize the output of company_social() function
 Bug fix: Upload image dialogues placing path in wrong input box
 Bug fix: Issue with company_address shortcode
 
+= 1.0.7 =
+Cleaned up functions and other code
+Added submit current page to StumbleUpon option in social media section
+Added random version number to sprite image to ensure end-user isn't caching outdated image
+Known issue: [company_social] shortcode on post/page removes container element
+
 == Upcoming Features ==
 
 1. Automate adding Pods as subpages (currently a manual process in mcm_menu.php)
-2. Google Maps integration
+2. Google Maps integration for physical address

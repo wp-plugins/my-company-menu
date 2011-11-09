@@ -70,6 +70,16 @@
 					<table class="form-table">
 					<tbody>
 						<tr>
+							<td><p>Display available social media icons: [company_social]</p></td>
+							<td><?php
+								if(company_social()) {
+									echo company_social('', '<li><span class="description">Available icons</span></li>');
+								} else {
+									echo '<span class="description">Insert URLs on Company Page to show how icons will look on frontend.</span>';
+								}
+							?></td>
+						</tr>
+						<tr>
 							<th scope="row"><label>Google Plus</label></th>
 							<td><input class="regular-text" type="text" name="mycomp_menu_gplus_x" value="<?php echo $hoptions['gplus_x']; ?>" id="mycomp_menu_gplus_x" /><br /><span class="description">X-coordinate</span><input class="regular-text" type="text" name="mycomp_menu_gplus_x_hover" value="<?php echo $hoptions['gplus_x_hover']; ?>" id="mycomp_menu_gplus_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
 							<td><input class="regular-text" type="text" name="mycomp_menu_gplus_y" value="<?php echo $hoptions['gplus_y']; ?>" id="mycomp_menu_gplus_y" /><br /><span class="description">Y-coordinate</span><input class="regular-text" type="text" name="mycomp_menu_gplus_y_hover" value="<?php echo $hoptions['gplus_y_hover']; ?>" id="mycomp_menu_gplus_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
@@ -105,19 +115,14 @@
 							<td><input class="regular-text" type="text" name="mycomp_menu_vimeo_y" value="<?php echo $hoptions['vimeo_y']; ?>" id="mycomp_menu_vimeo_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_vimeo_y_hover" value="<?php echo $hoptions['vimeo_y_hover']; ?>" id="mycomp_menu_vimeo_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
 						</tr>
 						<tr>
+							<th scope="row"><label>StumbleUpon</label></th>
+							<td><input class="regular-text" type="text" name="mycomp_menu_stumble_x" value="<?php echo $hoptions['stumble_x']; ?>" id="mycomp_menu_vimeo_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_stumble_x_hover" value="<?php echo $hoptions['stumble_x_hover']; ?>" id="mycomp_menu_stumble_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
+							<td><input class="regular-text" type="text" name="mycomp_menu_stumble_y" value="<?php echo $hoptions['stumble_y']; ?>" id="mycomp_menu_stumble_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_stumble_y_hover" value="<?php echo $hoptions['stumble_y_hover']; ?>" id="mycomp_menu_stumble_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
+						</tr>
+						<tr>
 							<th scope="row"><label>RSS Feed</label></th>
 							<td><input class="regular-text" type="text" name="mycomp_menu_rss_x" value="<?php echo $hoptions['rss_x']; ?>" id="mycomp_menu_rss_x" /><br /><span class="description">X-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_rss_x_hover" value="<?php echo $hoptions['rss_x_hover']; ?>" id="mycomp_menu_rss_x_hover" /><br /><span class="description">X-coordinate on hover</span></td>
 							<td><input class="regular-text" type="text" name="mycomp_menu_rss_y" value="<?php echo $hoptions['rss_y']; ?>" id="mycomp_menu_rss_y" /><br /><span class="description">Y-coordinate</span><br /><input class="regular-text" type="text" name="mycomp_menu_rss_y_hover" value="<?php echo $hoptions['rss_y_hover']; ?>" id="mycomp_menu_rss_y_hover" /><br /><span class="description">Y-coordinate on hover</span></td>
-						</tr>
-						<tr>
-							<td><p>Display available social media icons: [company_social]</p></td>
-							<td><?php
-								if(company_social()) {
-									echo company_social('', '<li><span class="description">Available icons</span></li>');
-								} else {
-									echo '<span class="description">Insert URLs on Company Page to show how icons will look on frontend.</span>';
-								}
-							?></td>
 						</tr>
 					</tbody>
 					</table>

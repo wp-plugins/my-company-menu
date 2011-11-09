@@ -29,27 +29,27 @@ add_shortcode('company_disclaimer', 'company_disclaimer');
 // Variables
 $myComp_hasSocial = 0;
 
+// Process phone numbers
+
+
 // Contact information
+function mcm_contact_info($method) {
+	$options = get_mycomp_menu_contact();
+	return $options[$method];
+}
+
 function company_phone() {
-	$options = get_mycomp_menu_contact();
-	return $options['phone'];
+	return mcm_contact_info('phone');
 }
-
 function company_tollfree() {
-	$options = get_mycomp_menu_contact();
-	return $options['tollfree'];
+	return mcm_contact_info('tollfree');
 }
-
 function company_fax() {
-	$options = get_mycomp_menu_contact();
-	return $options['fax'];
+	return mcm_contact_info('fax');
 }
-
-function company_disclaimer($tag = "p") {
-	$options = get_mycomp_menu_contact();
-	return $options['disclaimer'];
+function company_disclaimer() {
+	return mcm_contact_info('disclaimer');
 }
-
 function company_email() {
 	$options = get_mycomp_menu_contact();
 	$myCompEmail = '<a href="mailto:'.$options['email'].'" title="'.$options['email'].'">'.$options['email'].'</a>';
@@ -57,106 +57,52 @@ function company_email() {
 }
 
 // Social media
+
+// Determine if social network has URL and return value
+function mcm_social_display($name) {
+	$options = get_mycomp_menu_contact();
+	$hoptions = get_mycomp_menu_help();
+	if($options[$name] != '') {
+		$mcm_social_data = '<a style="background-position: '.$hoptions[$name.'_x'].'px '.$hoptions[$name.'_y'].'px;" href="'.$options[$name].'" title="See us on '.ucfirst($name).'">'.ucfirst($name).'</a>';
+		return $mcm_social_data;
+	} else {
+		return false;
+	}
+}
+
+// Pass each social network to Display Function
 function company_gplus() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	if($options['gplus'] != '') {
-		$myCompGplus = '<a style="background-position: '.$hoptions['gplus_x'].'px '.$hoptions['gplus_y'].'px;" href="'.$options['gplus'].'" title="See us on Google+">Google+</a>';
-		$social_gplus = 1;
-		$myComp_hasSocial = 1;
-		return $myCompGplus;
-	} else {
-		return false;
-	}
+	return mcm_social_display('gplus');
 }
-
-function company_skype() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	if($options['skype'] != '') {
-		$myCompSkype = '<a style="background-position: '.$hoptions['skype_x'].'px '.$hoptions['skype_y'].'px;" href="'.$options['skype'].'" title="See us on Skype">Skype</a>';
-		$social_skype = 1;
-		$myComp_hasSocial = 1;
-		return $myCompSkype;
-	} else {
-		return false;
-	}
-}
-
 function company_facebook() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	if($options['facebook'] != '') {
-		$myCompFacebook = '<a style="background-position: '.$hoptions['facebook_x'].'px '.$hoptions['facebook_y'].'px;" href="'.$options['facebook'].'" title="See our Facebook fan page">Facebook fan page</a>';
-		$social_facebook = 1;
-		$myComp_hasSocial = 1;
-		return $myCompFacebook;
-	} else {
-		return false;
-	}
+	return mcm_social_display('facebook');
 }
-
-function company_youtube() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	if($options['youtube'] != '') {
-		$myCompYoutube = '<a style="background-position: '.$hoptions['youtube_x'].'px '.$hoptions['youtube_y'].'px;" href="'.$options['youtube'].'" title="See our YouTube channel">YouTube channel</a>';
-		$social_youtube = 1;
-		$myComp_hasSocial = 1;
-		return $myCompYoutube;
-	} else {
-		return false;
-	}
-}
-
-function company_vimeo() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	global $mcm_hoptions;
-	if($options['vimeo'] != '') {
-		$myCompVimeo = '<a style="background-position: '.$hoptions['vimeo_x'].'px '.$hoptions['vimeo_y'].'px;" href="'.$options['vimeo'].'" title="See our Vimeo videos">See our Vimeo videos</a>';
-		$social_vimeo = 1;
-		$myComp_hasSocial = 1;
-		return $myCompVimeo;
-	} else {
-		return false;
-	}
-}
-
-function company_linkedin() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	if($options['linkedin'] != '') {
-		$myCompLinkedin = '<a style="background-position: '.$hoptions['linkedin_x'].'px '.$hoptions['linkedin_y'].'px;" href="'.$options['linkedin'].'" title="See our LinkedIn profile">See our LinkedIn profile</a>';
-		$social_linkedin = 1;
-		$myComp_hasSocial = 1;
-		return $myCompLinkedin;
-	} else {
-		return false;
-	}
-}
-
 function company_twitter() {
-	$options = get_mycomp_menu_contact();
-	$hoptions = get_mycomp_menu_help();
-	if($options['twitter'] != '') {
-		$myCompTwitter = '<a style="background-position: '.$hoptions['twitter_x'].'px '.$hoptions['twitter_y'].'px;" href="'.$options['twitter'].'" title="Follow us on Twitter">Follow us on Twitter</a>';
-		$social_twitter = 1;
-		$myComp_hasSocial = 1;
-		return $myCompTwitter;
-	} else {
-		return false;
-	}
+	return mcm_social_display('twitter');
 }
-
+function company_linkedin() {
+	return mcm_social_display('linkedin');
+}
+function company_youtube() {
+	return mcm_social_display('youtube');
+}
+function company_vimeo() {
+	return mcm_social_display('vimeo');
+}
+function company_skype() {
+	return mcm_social_display('skype');
+}
 function company_rss() {
+	return mcm_social_display('rss');
+}
+function company_stumble() {
+	global $wpdb;
 	$options = get_mycomp_menu_contact();
 	$hoptions = get_mycomp_menu_help();
-	if($options['rss'] != '') {
-		$myCompRss = '<a style="background-position: '.$hoptions['rss_x'].'px '.$hoptions['rss_y'].'px;" href="'.$options['rss'].'" title="Subscribe via RSS">Subscribe via RSS</a>';
-		$social_rss = 1;
-		$myComp_hasSocial = 1;
-		return $myCompRss;
+
+	if($options['stumble']) {
+		$mcm_social_data = '<a style="background-position: '.$hoptions['stumble_x'].'px '.$hoptions['stumble_y'].'px;" href="http://www.stumbleupon.com/submit?url='.CURRENT_PAGE.'" title="Submit this page to Stumble">StumbleUpon</a>';
+		return $mcm_social_data;
 	} else {
 		return false;
 	}
@@ -173,6 +119,7 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 	$vimeo = company_vimeo();
 	$skype = company_skype();
 	$rss = company_rss();
+	$stumble = company_stumble();
 
 	if($gplus) {
 		$gplus = '<'.$each.' class="mcm_gplus">'.$gplus.'</'.$each.'>';
@@ -206,24 +153,30 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 		$rss = '<'.$each.' class="mcm_rss">'.$rss.'</'.$each.'>';
 		$hasSocial = 1;
 	}
+	if($stumble) {
+		$stumble = '<'.$each.' class="mcm_stumble">'.$stumble.'</'.$each.'>';
+		$hasSocial = 1;
+	}
 
-	if($facebook || $twitter || $linkedin || $youtube || $skype || $vimeo || $gplus || $rss) {
+	if($facebook || $twitter || $linkedin || $youtube || $skype || $vimeo || $gplus || $rss || $stumble) {
 		$myComp_social = 
 		'<'.$container.' class="mcm_social">'.
-			$socialbefore . $gplus . $facebook . $twitter . $linkedin . $skype . $youtube . $vimeo . $rss . $socialafter .
+			$socialbefore . $gplus . $facebook . $twitter . $linkedin . $skype . $youtube . $vimeo . $rss . $stumble . $socialafter .
 		'</'.$container.'> <!-- /social -->';
 		$mcm_socialsprite = '
 			<style>
 				.mcm_social {overflow: hidden;}
-				.mcm_social li {float: right; margin-right: 5px;}
-				.mcm_social li a {text-indent: -9999em; display: block; background-image: url('.$hoptions['socialsprite'].'); background-repeat: no-repeat; width: '.$hoptions['socialsprite_icon_width'].'px; height: '.$hoptions['socialsprite_icon_height'].'px;}
+				.mcm_social li {float: right; margin-right: 5px; list-style: none;}
+				.mcm_social li a {text-indent: -9999em; display: block; background-image: url("'.$hoptions['socialsprite'].'?ver='.rand(1, 1000).'"); background-repeat: no-repeat; width: '.$hoptions['socialsprite_icon_width'].'px; height: '.$hoptions['socialsprite_icon_height'].'px;}
 				.mcm_social li.mcm_gplus a:hover {background-position: '.$hoptions['gplus_x_hover'].'px '.$hoptions['gplus_y_hover'].'px !important;}
 				.mcm_social li.mcm_facebook a:hover {background-position: '.$hoptions['facebook_x_hover'].'px '.$hoptions['facebook_y_hover'].'px !important;}
 				.mcm_social li.mcm_twitter a:hover {background-position: '.$hoptions['twitter_x_hover'].'px '.$hoptions['twitter_y_hover'].'px !important;}
 				.mcm_social li.mcm_linkedin a:hover {background-position: '.$hoptions['linkedin_x_hover'].'px '.$hoptions['linkedin_y_hover'].'px !important;}
 				.mcm_social li.mcm_youtube a:hover {background-position: '.$hoptions['youtube_x_hover'].'px '.$hoptions['youtube_y_hover'].'px !important;}
+				.mcm_social li.mcm_skype a:hover {background-position: '.$hoptions['skype_x_hover'].'px '.$hoptions['skype_y_hover'].'px !important;}
 				.mcm_social li.mcm_vimeo a:hover {background-position: '.$hoptions['vimeo_x_hover'].'px '.$hoptions['vimeo_y_hover'].'px !important;}
 				.mcm_social li.mcm_rss a:hover {background-position: '.$hoptions['rss_x_hover'].'px '.$hoptions['rss_y_hover'].'px !important;}
+				.mcm_social li.mcm_stumble a:hover {background-position: '.$hoptions['stumble_x_hover'].'px '.$hoptions['stumble_y_hover'].'px !important;}
 			</style>
 		';
 		$myComp_social .= $mcm_socialsprite;
@@ -233,7 +186,9 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 	}
 }
 
-// Physical address
+/* Physical address */
+
+// Wrap physical address in <address> tags and display on several lines
 function company_address() {
 	$options = get_mycomp_menu_contact();
 
@@ -250,6 +205,7 @@ function company_address() {
 	}
 }
 
+// Wrap physical address in <address> tags and display on one line
 function company_address_oneline() {
 	$options = get_mycomp_menu_contact();
 

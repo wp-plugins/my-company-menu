@@ -18,3 +18,5 @@
 .mcm_box span.description {font-style: normal; font-size: 10px; color: #7A7A7A;}
 .mcm_box code {font-style: normal;}
 .mcm_box textarea {resize: vertical;}
+p {line-height: 18px;}
+ol li {list-style: decimal;}
