@@ -1,4 +1,4 @@
-=== My Company Menu ===
+﻿=== My Company Menu ===
 Contributors:  jcross
 Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
@@ -42,7 +42,7 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 * Cleaned up functions and other code
 * Added submit current page to StumbleUpon option in social media section
 * Added random version number to sprite image to ensure end-user isn't caching outdated image
-* Known issue: [company_social] shortcode on post/page removes container element
+* Known issue: company_social shortcode on post/page removes container element
 
 = 1.0.6 =
 * Added Skype
@@ -87,7 +87,6 @@ Learn about using <a href="http://www.w3schools.com/css/css_image_sprites.asp" t
 5. Now you can customize the upstate and hover state of your social media icons by using an image sprite.
 6. Convenient buttons added to TinyMCE WYSIWYG.
 
-
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -115,7 +114,7 @@ Bug fix: Issue with company_address shortcode
 Cleaned up functions and other code
 Added submit current page to StumbleUpon option in social media section
 Added random version number to sprite image to ensure end-user isn't caching outdated image
-Known issue: [company_social] shortcode on post/page removes container element
+Known issue: company_social shortcode on post/page removes container element
 
 == Upcoming Features ==
 
