@@ -111,10 +111,7 @@ Bug fix: Upload image dialogues placing path in wrong input box
 Bug fix: Issue with company_address shortcode
 
 = 1.0.7 =
-Cleaned up functions and other code
-Added submit current page to StumbleUpon option in social media section
-Added random version number to sprite image to ensure end-user isn't caching outdated image
-Known issue: company_social shortcode on post/page removes container element
+Cleaned up functions and other code. Added submit current page to StumbleUpon option in social media section. Added random version number to sprite image to ensure end-user isn't caching outdated image. Known issue: company_social shortcode on post/page removes container element
 
 == Upcoming Features ==
 
