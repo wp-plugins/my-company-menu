@@ -3,7 +3,7 @@ Contributors:  jcross
 Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
-Tested up to: 3.2.1
+Tested up to: 3.3
 Stable tag: 1.0.7
 
 Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
@@ -17,7 +17,7 @@ This plugin is intended for theme developers who build WordPress websites for ot
 3. Add custom subpages under this tab
 4. Change the menu title and icon to match your client's branding.
 
-I use this new menu to organize Pods, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
+I mostly use this new menu to organize Pods, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
 
 I include a Demo Page (mcm_menu.php located in the plugin directory). If you have no need for additional subpages, just check the Hide Demo Page box on the Help/Settings page to remove it. Otherwise, move mcm_menu.php from Plugins to your Uploads directory to customize it as needed (this will ensure your tweaks remain after an update). The file mcm_menu.php has ample template functions and recommendations for creating your own custom pages.
 
