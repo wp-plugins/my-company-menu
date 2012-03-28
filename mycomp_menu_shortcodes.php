@@ -163,29 +163,46 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 		'<'.$container.' class="mcm_social">'.
 			$socialbefore . $gplus . $facebook . $twitter . $linkedin . $skype . $youtube . $vimeo . $rss . $stumble . $socialafter .
 		'</'.$container.'> <!-- /social -->';
-		$mcm_socialsprite = '
-			<style type="text/css">
-				.mcm_social {overflow: hidden;}
-				.mcm_social li {float: right; margin-right: 5px; list-style: none;}
-				.mcm_social li a {text-indent: 9999em; display: block; background-image: url("'.$hoptions['socialsprite'].'?ver='.rand(1, 1000).'"); background-repeat: no-repeat; width: '.$hoptions['socialsprite_icon_width'].'px; height: '.$hoptions['socialsprite_icon_height'].'px;}
-				.mcm_social li.mcm_gplus a:hover {background-position: '.$hoptions['gplus_x_hover'].'px '.$hoptions['gplus_y_hover'].'px !important;}
-				.mcm_social li.mcm_facebook a:hover {background-position: '.$hoptions['facebook_x_hover'].'px '.$hoptions['facebook_y_hover'].'px !important;}
-				.mcm_social li.mcm_twitter a:hover {background-position: '.$hoptions['twitter_x_hover'].'px '.$hoptions['twitter_y_hover'].'px !important;}
-				.mcm_social li.mcm_linkedin a:hover {background-position: '.$hoptions['linkedin_x_hover'].'px '.$hoptions['linkedin_y_hover'].'px !important;}
-				.mcm_social li.mcm_youtube a:hover {background-position: '.$hoptions['youtube_x_hover'].'px '.$hoptions['youtube_y_hover'].'px !important;}
-				.mcm_social li.mcm_skype a:hover {background-position: '.$hoptions['skype_x_hover'].'px '.$hoptions['skype_y_hover'].'px !important;}
-				.mcm_social li.mcm_vimeo a:hover {background-position: '.$hoptions['vimeo_x_hover'].'px '.$hoptions['vimeo_y_hover'].'px !important;}
-				.mcm_social li.mcm_rss a:hover {background-position: '.$hoptions['rss_x_hover'].'px '.$hoptions['rss_y_hover'].'px !important;}
-				.mcm_social li.mcm_stumble a:hover {background-position: '.$hoptions['stumble_x_hover'].'px '.$hoptions['stumble_y_hover'].'px !important;}
-			</style>
-		';
-		add_action('wp_head', $mcm_socialsprite);
-		//$myComp_social .= $mcm_socialsprite;
 		return $myComp_social;
 	} else {
 		return false;
 	}
 }
+	/**
+	*
+	* 
+	*/
+	function mcm_social_frontstyle() {
+		$options = get_mycomp_menu_contact();
+		$hoptions = get_mycomp_menu_help();
+
+		$gplus = company_gplus();
+		$facebook = company_facebook();
+		$twitter = company_twitter();
+		$linkedin = company_linkedin();
+		$youtube = company_youtube();
+		$vimeo = company_vimeo();
+		$skype = company_skype();
+		$rss = company_rss();
+		$stumble = company_stumble();
+	?>
+		 <style type="text/css" media="screen">
+			.mcm_social {overflow: hidden;}
+			.mcm_social li {float: right; margin-right: 5px; list-style: none;}
+			.mcm_social li a {text-indent: 9999em; display: block; background-image: url("<?php echo $hoptions['socialsprite'] ?>?ver='.rand(1, 1000).'"); background-repeat: no-repeat; width: <?php echo $hoptions['socialsprite_icon_width'] ?>px; height: <?php echo $hoptions['socialsprite_icon_height'] ?>px;}
+			.mcm_social li.mcm_gplus a:hover {background-position: <?php echo $hoptions['gplus_x_hover'] ?>px <?php echo $hoptions['gplus_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_facebook a:hover {background-position: <?php echo $hoptions['facebook_x_hover'] ?>px <?php echo $hoptions['facebook_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_twitter a:hover {background-position: <?php echo $hoptions['twitter_x_hover'] ?>px <?php echo $hoptions['twitter_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_linkedin a:hover {background-position: <?php echo $hoptions['linkedin_x_hover'] ?>px <?php echo $hoptions['linkedin_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_youtube a:hover {background-position: <?php echo $hoptions['youtube_x_hover'] ?>px <?php echo $hoptions['youtube_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_skype a:hover {background-position: <?php echo $hoptions['skype_x_hover'] ?>px <?php echo $hoptions['skype_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_vimeo a:hover {background-position: <?php echo $hoptions['vimeo_x_hover'] ?>px <?php echo $hoptions['vimeo_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_rss a:hover {background-position: <?php echo $hoptions['rss_x_hover'] ?>px <?php echo $hoptions['rss_y_hover'] ?>px !important;}
+			.mcm_social li.mcm_stumble a:hover {background-position: <?php echo $hoptions['stumble_x_hover'] ?>px <?php echo $hoptions['stumble_y_hover'] ?>px !important;}
+		</style>
+	<?php
+	}
+	add_action('wp_head', 'mcm_social_frontstyle');
 
 /* Physical address */
 
