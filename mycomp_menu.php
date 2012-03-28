@@ -9,7 +9,7 @@ Author URI: http://www.immense.net/
 */
 
 /* Definitions */
-define('MYCOMP_MENU_VERSION', '1.0.7');
+define('MYCOMP_MENU_VERSION', '1.0.8');
 define('MYCOMP_MENU_URL', plugin_dir_url( __FILE__ ));
 define('CURRENT_PAGE', 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 

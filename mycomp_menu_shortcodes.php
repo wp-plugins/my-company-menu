@@ -164,7 +164,7 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 			$socialbefore . $gplus . $facebook . $twitter . $linkedin . $skype . $youtube . $vimeo . $rss . $stumble . $socialafter .
 		'</'.$container.'> <!-- /social -->';
 		$mcm_socialsprite = '
-			<style>
+			<style type="text/css">
 				.mcm_social {overflow: hidden;}
 				.mcm_social li {float: right; margin-right: 5px; list-style: none;}
 				.mcm_social li a {text-indent: 9999em; display: block; background-image: url("'.$hoptions['socialsprite'].'?ver='.rand(1, 1000).'"); background-repeat: no-repeat; width: '.$hoptions['socialsprite_icon_width'].'px; height: '.$hoptions['socialsprite_icon_height'].'px;}
@@ -179,7 +179,8 @@ function company_social($socialbefore = "", $socialafter = "", $container = "ul"
 				.mcm_social li.mcm_stumble a:hover {background-position: '.$hoptions['stumble_x_hover'].'px '.$hoptions['stumble_y_hover'].'px !important;}
 			</style>
 		';
-		$myComp_social .= $mcm_socialsprite;
+		add_action('wp_head', $mcm_socialsprite);
+		//$myComp_social .= $mcm_socialsprite;
 		return $myComp_social;
 	} else {
 		return false;

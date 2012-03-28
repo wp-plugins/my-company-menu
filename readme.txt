@@ -4,7 +4,7 @@ Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.3
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 
 Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 
@@ -37,6 +37,9 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory
 
 == Changelog ==
+
+= 1.0.8 =
+* Fixed bug that caused markup validation issues.
 
 = 1.0.7 =
 * Cleaned up functions and other code
@@ -112,6 +115,9 @@ Bug fix: Issue with company_address shortcode
 
 = 1.0.7 =
 Cleaned up functions and other code. Added submit current page to StumbleUpon option in social media section. Added random version number to sprite image to ensure end-user isn't caching outdated image. Known issue: company_social shortcode on post/page removes container element
+
+= 1.0.8 =
+Update to fix markup validation issues.
 
 == Upcoming Features ==
 
