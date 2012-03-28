@@ -39,7 +39,7 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 == Changelog ==
 
 = 1.0.8 =
-* Fixed bug that caused markup validation issues.
+* Fixed bug that caused markup validation issues
 
 = 1.0.7 =
 * Cleaned up functions and other code
@@ -117,7 +117,7 @@ Bug fix: Issue with company_address shortcode
 Cleaned up functions and other code. Added submit current page to StumbleUpon option in social media section. Added random version number to sprite image to ensure end-user isn't caching outdated image. Known issue: company_social shortcode on post/page removes container element
 
 = 1.0.8 =
-Update to fix markup validation issues.
+Update to fix markup validation issues
 
 == Upcoming Features ==
 
