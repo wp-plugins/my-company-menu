@@ -4,7 +4,7 @@ Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
 Tested up to: 3.4.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 Give your clients a Company Menu to manage contact information.
 
@@ -32,6 +32,9 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 5. Edit menu settings and social media icons on Help/Settings page
 
 == Changelog ==
+
+= 1.1.1 =
+* Tweaked function to allow mcm_menu.php file
 
 = 1.1.0 =
 * Minor verbiage changes. Removed all references to creating custom pages and focused more on providing a simple interface for managing company contact info. Users utilizing the mcm_menu.php file in your uploads directory can safely upgrade; this check will never be removed..
