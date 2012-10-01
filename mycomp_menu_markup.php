@@ -19,23 +19,23 @@
 						<table class="form-table">
 							<tr>
 								<th scope="row"><label for="mycomp_menu_phone">Phone Number</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_phone" value="<?php echo $options['phone']; ?>" id="mycomp_menu_phone" /><br /><span class="description">Shortcode <code> [company_phone]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_phone" value="<?php echo $options['phone']; ?>" id="mycomp_menu_phone" /><br /><span class="description">Use this shortcode <code>[company_phone]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_tollfree">Toll Free Number</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_tollfree" value="<?php echo $options['tollfree']; ?>" id="mycomp_menu_tollfree" /><br /><span class="description">Shortcode <code> [company_tollfree]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_tollfree" value="<?php echo $options['tollfree']; ?>" id="mycomp_menu_tollfree" /><br /><span class="description">Use this shortcode <code>[company_tollfree]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_fax">Fax Number</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_fax" value="<?php echo $options['fax']; ?>" id="mycomp_menu_fax" /><br /><span class="description">Shortcode <code> [company_fax]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_fax" value="<?php echo $options['fax']; ?>" id="mycomp_menu_fax" /><br /><span class="description">Use this shortcode <code>[company_fax]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_email">Email Address</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_email" value="<?php echo $options['email']; ?>" id="mycomp_menu_email" /><br /><span class="description">Shortcode <code> [company_email]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_email" value="<?php echo $options['email']; ?>" id="mycomp_menu_email" /><br /><span class="description">Use this shortcode <code>[company_email]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_disclaimer">Disclaimer</label></th>
-								<td><textarea class="regular-text" rows="6" cols="85" name="mycomp_menu_disclaimer" id="mycomp_menu_disclaimer"><?php echo $options['disclaimer']; ?></textarea><br /><span class="description">Shortcode <code> [company_disclaimer]</code></td>
+								<td><textarea class="regular-text" rows="6" cols="85" name="mycomp_menu_disclaimer" id="mycomp_menu_disclaimer"><?php echo $options['disclaimer']; ?></textarea><br /><span class="description">Use this shortcode <code>[company_disclaimer]</code></td>
 							</tr>
 						</table>
 					</div> <!-- /section -->
@@ -136,7 +136,7 @@
 										if(company_address()) {
 											echo company_address();
 										} else {
-											echo '<span class="description">[Insert values in the address fields above to see how it\'ll look on the frontend]</span>';
+											echo '<span class="description">[Address fields above are empty]</span>';
 										}
 									 ?></td>
 								</tr>
@@ -146,7 +146,7 @@
 										if(company_address_oneline()) {
 											echo company_address_oneline();
 										} else {
-											echo '<span class="description">[Insert values in the address fields above to see how it\'ll look on the frontend]</span>';
+											echo '<span class="description">[Address fields above are empty]</span>';
 										}
 									 ?></td>
 								</tr>
@@ -164,35 +164,35 @@
 						<table class="form-table">
 							<tr>
 								<th scope="row"><label for="mycomp_menu_gplus">Google+ (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_gplus" value="<?php echo $options['gplus']; ?>" id="mycomp_menu_gplus" /><br /><span class="description">Shortcode <code> [company_gplus]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_gplus" value="<?php echo $options['gplus']; ?>" id="mycomp_menu_gplus" /><br /><span class="description">Use this shortcode <code>[company_gplus]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_facebook">Facebook (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_facebook" value="<?php echo $options['facebook']; ?>" id="mycomp_menu_facebook" /><br /><span class="description">Shortcode <code> [company_facebook]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_facebook" value="<?php echo $options['facebook']; ?>" id="mycomp_menu_facebook" /><br /><span class="description">Use this shortcode <code>[company_facebook]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_twitter">Twitter (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_twitter" value="<?php echo $options['twitter']; ?>" id="mycomp_menu_twitter" /><br /><span class="description">Shortcode <code> [company_twitter]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_twitter" value="<?php echo $options['twitter']; ?>" id="mycomp_menu_twitter" /><br /><span class="description">Use this shortcode <code>[company_twitter]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_linkedin">LinkedIn (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_linkedin" value="<?php echo $options['linkedin']; ?>" id="mycomp_menu_linkedin" /><br /><span class="description">Shortcode <code> [company_linkedin]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_linkedin" value="<?php echo $options['linkedin']; ?>" id="mycomp_menu_linkedin" /><br /><span class="description">Use this shortcode <code>[company_linkedin]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_skype">Skype (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_skype" value="<?php echo $options['skype']; ?>" id="mycomp_menu_skype" /><br /><span class="description">Shortcode <code> [company_skype]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_skype" value="<?php echo $options['skype']; ?>" id="mycomp_menu_skype" /><br /><span class="description">Use this shortcode <code>[company_skype]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_youtube">YouTube Channel (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_youtube" value="<?php echo $options['youtube']; ?>" id="mycomp_menu_youtube" /><br /><span class="description">Shortcode <code> [company_youtube]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_youtube" value="<?php echo $options['youtube']; ?>" id="mycomp_menu_youtube" /><br /><span class="description">Use this shortcode <code>[company_youtube]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_vimeo">Vimeo (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_vimeo" value="<?php echo $options['vimeo']; ?>" id="mycomp_menu_vimeo" /><br /><span class="description">Shortcode <code> [company_vimeo]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_vimeo" value="<?php echo $options['vimeo']; ?>" id="mycomp_menu_vimeo" /><br /><span class="description">Use this shortcode <code>[company_vimeo]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_rss">RSS Feed (URL)</label></th>
-								<td><input class="regular-text" type="text" name="mycomp_menu_rss" value="<?php echo $options['rss']; ?>" id="mycomp_menu_rss" /><br /><span class="description">Shortcode <code> [company_rss]</code></td>
+								<td><input class="regular-text" type="text" name="mycomp_menu_rss" value="<?php echo $options['rss']; ?>" id="mycomp_menu_rss" /><br /><span class="description">Use this shortcode <code>[company_rss]</code></td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="mycomp_menu_stumble">StumbleUpon (URL)</label></th>
@@ -252,12 +252,11 @@
 			</form>
 		</div> <!-- /metabox-holder -->
 	</div> <!-- postbox-container-->
-	<div class="postbox-container mcm_box" style="width:20%;">
+	<div class="postbox-container mcm_box" style="width:25%;">
 		<div class="metabox-holder">
 			<div class="postbox">
-				<h3>How to use this data</h3>
+				<h3>How to show this data</h3>
 				<div class="section">
-
 					<p>Display the values in these input boxes on your posts/pages by using the shortcode below each box.</p>
 					<h4>What are shortcodes?</h4>
 					<p>Shortcodes are just like placeholders. WordPress will recognize these shortcodes in your content and automatically replace it with the data in the that input box.</p>

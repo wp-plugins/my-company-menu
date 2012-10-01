@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: My Company Menu
-Version: 1.0.9
-Plugin URI: http://www.jasonmichaelcross.com/
+Version: 1.1.0
+Plugin URI: http://www.immense.net/
 Description: Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
 Author: Immense Networks | Jason Michael Cross
 Author URI: http://www.immense.net/

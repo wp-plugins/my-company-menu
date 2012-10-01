@@ -1,25 +1,21 @@
-﻿=== My Company Menu ===
+=== My Company Menu ===
 Contributors:  jcross
 Donate link: http://www.immense.net/company-menu-plugin-wordpress/
 Tags: company admin menu, business, contact information, business, social media
 Requires at least: 2.5
-Tested up to: 3.3
-Stable tag: 1.0.9
+Tested up to: 3.4.2
+Stable tag: 1.1.0
 
-Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
+Give your clients a Company Menu to manage contact information.
 
 == Description ==
 
-This plugin is intended for theme developers who build WordPress websites for other businesses. Give your clients a Company Menu to manage contact information and custom subpages (like Pods managers).
+This plugin is intended for theme developers who build WordPress websites for other businesses. Give your clients a Company Menu to manage typical phone numbers, email, address, and social media links. Integrate those fields in your template files or directly on posts/pages with simple shortcodes and functions.
 
 1. Adds a new tab in the Admin’s Sidebar
 2. Main page in this new tab used to manage standard business contact information and social networking links.
 3. Add custom subpages under this tab
 4. Change the menu title and icon to match your client's branding.
-
-I mostly use this new menu to organize Pods, like a Work Portfolio or Team Member Manager. This lets me create custom managers for my client and consolidate them under one menu, keeping the sidebar simple and clean.
-
-I include a Demo Page (mcm_menu.php located in the plugin directory). If you have no need for additional subpages, just check the Hide Demo Page box on the Help/Settings page to remove it. Otherwise, move mcm_menu.php from Plugins to your Uploads directory to customize it as needed (this will ensure your tweaks remain after an update). The file mcm_menu.php has ample template functions and recommendations for creating your own custom pages.
 
 Each field has a shortcode beneath it that can be used on posts and pages to show the contents of the related input box. Theme developers can use the same shortcode as PHP functions in templates to display the data.
 
@@ -34,9 +30,11 @@ Complete breakdown of features can be found here: http://www.immense.net/company
 3. Select 'Company' from the admin sidebar and fill in necessary fields
 4. Use shortcodes on pages and functions in template files to display information
 5. Edit menu settings and social media icons on Help/Settings page
-6. For custom subpages, move mcm_menu.php from Plugins to Uploads directory
 
 == Changelog ==
+
+= 1.1.0 =
+* Minor verbiage changes. Removed all references to creating custom pages and focused more on providing a simple interface for managing company contact info. Users utilizing the mcm_menu.php file in your uploads directory can safely upgrade; this check will never be removed..
 
 = 1.0.9 =
 * Fixed bug causing company_social icons to ignore user-defined sprite background positions
@@ -124,3 +122,6 @@ Update to fix markup validation issues
 
 = 1.0.9 =
 Fixed bug causing company_social icons to ignore user-defined sprite background positions
+
+= 1.1.0 =
+Minor updates. Removed demo page.

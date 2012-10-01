@@ -39,8 +39,11 @@ function mycomp_menu_page() {
 }
 
 /*
+////
+//// Deprecated in version 1.1.0
+////
 Look for custom submenu functions in user's custom mcm_menu
-*/
+
 add_action('admin_menu', 'mycomp_show_demo_page');
 
 function mycomp_show_demo_page() {
@@ -54,8 +57,7 @@ function mycomp_show_demo_page() {
       load_mcm_menu_default();
   }
 }
-
-//mycomp_show_demo_page();
+*/
 
 /* Show Help/Settings subpage */
 add_action('admin_menu','pods_ui_mycomp_helpsub');
